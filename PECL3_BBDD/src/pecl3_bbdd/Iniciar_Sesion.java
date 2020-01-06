@@ -158,7 +158,7 @@ public class Iniciar_Sesion extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 Logger.getLogger(Iniciar_Sesion.class.getName()).log(Level.SEVERE, null, ex);
             }
-            Vista_Cajero vc = new Vista_Cajero(conexion);
+            Vista_Gestor vc = new Vista_Gestor(conexion);
             this.setVisible(false);
             vc.setVisible(true);
         } else {
