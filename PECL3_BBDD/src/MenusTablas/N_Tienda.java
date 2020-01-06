@@ -49,7 +49,8 @@ public class N_Tienda extends javax.swing.JFrame {
         btn_Crear = new javax.swing.JButton();
         btn_Cancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nueva Tienda");
 
         lbl_Nombre.setText("Nombre: ");
 
@@ -124,7 +125,8 @@ public class N_Tienda extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(308, 231));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     @SuppressWarnings("null")
@@ -149,7 +151,6 @@ public class N_Tienda extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_CrearActionPerformed
 
     private void btn_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CancelarActionPerformed
-        // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btn_CancelarActionPerformed
 

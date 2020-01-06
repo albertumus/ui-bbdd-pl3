@@ -109,10 +109,14 @@ public static Connection conexion;
 
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
+        M_Tienda ventana = new M_Tienda(conexion);
+        ventana.setVisible(true);
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
+        E_Tienda ventana = new E_Tienda(conexion);
+        ventana.setVisible(true);
     }//GEN-LAST:event_btn_EliminarActionPerformed
 
     private void btn_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerActionPerformed
