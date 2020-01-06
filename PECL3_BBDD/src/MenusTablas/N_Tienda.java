@@ -5,13 +5,9 @@
  */
 package MenusTablas;
 
-import static VisualizarTablas.Ver_Cupon.conexion;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,6 +24,9 @@ public class N_Tienda extends javax.swing.JFrame {
     public N_Tienda(Connection c) {
         N_Tienda.conexion = c;
         initComponents();
+        tf_Nombre.setText("");
+        tf_Barrio.setText("");
+        tf_Ciudad.setText("");
     }
 
     /**
@@ -132,21 +131,27 @@ public class N_Tienda extends javax.swing.JFrame {
     @SuppressWarnings("null")
     private void btn_CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CrearActionPerformed
         // TODO add your handling code here:
-        Statement s = null;
+        if (tf_Nombre.getText().equals("") || tf_Ciudad.getText().equals("") || tf_Barrio.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No se puede insertar una clave vacia", "Error en la Insercion", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Statement s = null;
+            try {
+                s = conexion.createStatement();
+            } catch (SQLException se) {
+                System.out.println("probando conexion de consulta");
+            }
 
-        System.out.println(this.getTitle());
-        try {
-            s = conexion.createStatement();
-        } catch (SQLException se) {
-            System.out.println("probando conexion de consulta");
-        }
-
-        try {
-            //if(tf_Nombre.equals(""))
-            s.executeUpdate("INSERT INTO tienda (nombre, ciudad, barrio) VALUES ('" + tf_Nombre.getText() + "', '" + tf_Ciudad.getText() + "', '" + tf_Barrio.getText() + "')");
-        } catch (SQLException se) {
-            se.printStackTrace();
-            JOptionPane.showMessageDialog(null, "No se pudo realizar la insecion", "Error en la Consulta", JOptionPane.ERROR_MESSAGE);
+            try {
+                //if(tf_Nombre.equals(""))
+                s.executeUpdate("INSERT INTO tienda (nombre, ciudad, barrio) VALUES ('" + tf_Nombre.getText() + "', '" + tf_Ciudad.getText() + "', '" + tf_Barrio.getText() + "')");
+                JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+                this.setVisible(false);
+            } catch (SQLException se) {
+                JOptionPane.showMessageDialog(null, se.getMessage(), "Error en la Insercion", JOptionPane.ERROR_MESSAGE);
+                tf_Ciudad.setText("");
+                tf_Barrio.setText("");
+                tf_Nombre.setText("");
+            }
         }
     }//GEN-LAST:event_btn_CrearActionPerformed
 

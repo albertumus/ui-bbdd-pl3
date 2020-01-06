@@ -38,7 +38,6 @@ public final class M_Tienda extends javax.swing.JFrame {
 
         cb_TS = new javax.swing.JComboBox<>();
         lbl_Info = new javax.swing.JLabel();
-        lbl_Nombre = new javax.swing.JLabel();
         lbl_Ciudad = new javax.swing.JLabel();
         lbl_Barrio = new javax.swing.JLabel();
         lbl_Nombre1 = new javax.swing.JLabel();
@@ -49,7 +48,6 @@ public final class M_Tienda extends javax.swing.JFrame {
         tf_NombreA = new javax.swing.JTextField();
         tf_CiudadN = new javax.swing.JTextField();
         tf_BarrioN = new javax.swing.JTextField();
-        tf_NombreN = new javax.swing.JTextField();
         lbl_ValoresA = new javax.swing.JLabel();
         lbl_ValoresN = new javax.swing.JLabel();
         btn_Modify = new javax.swing.JButton();
@@ -64,8 +62,6 @@ public final class M_Tienda extends javax.swing.JFrame {
         });
 
         lbl_Info.setText("Seleccione una tienda de la lista:");
-
-        lbl_Nombre.setText("Nombre: ");
 
         lbl_Ciudad.setText("Ciudad: ");
 
@@ -129,10 +125,6 @@ public final class M_Tienda extends javax.swing.JFrame {
                             .addComponent(tf_CiudadA, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                             .addComponent(tf_NombreA)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl_Nombre)
-                        .addGap(18, 18, 18)
-                        .addComponent(tf_NombreN))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_Ciudad)
                             .addComponent(lbl_Barrio))
@@ -172,10 +164,6 @@ public final class M_Tienda extends javax.swing.JFrame {
                     .addComponent(tf_BarrioA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lbl_ValoresN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Nombre)
-                    .addComponent(tf_NombreN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_Ciudad)
@@ -188,10 +176,10 @@ public final class M_Tienda extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Modify)
                     .addComponent(btn_Exit))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(312, 459));
+        setSize(new java.awt.Dimension(312, 397));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -318,7 +306,6 @@ public final class M_Tienda extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Ciudad;
     private javax.swing.JLabel lbl_Ciudad1;
     private javax.swing.JLabel lbl_Info;
-    private javax.swing.JLabel lbl_Nombre;
     private javax.swing.JLabel lbl_Nombre1;
     private javax.swing.JLabel lbl_ValoresA;
     private javax.swing.JLabel lbl_ValoresN;
@@ -327,6 +314,5 @@ public final class M_Tienda extends javax.swing.JFrame {
     private javax.swing.JTextField tf_CiudadA;
     private javax.swing.JTextField tf_CiudadN;
     private javax.swing.JTextField tf_NombreA;
-    private javax.swing.JTextField tf_NombreN;
     // End of variables declaration//GEN-END:variables
 }

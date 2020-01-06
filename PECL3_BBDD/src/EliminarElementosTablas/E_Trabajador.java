@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MenusTablas;
+package EliminarElementosTablas;
 
+import MenusTablas.M_Tienda;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,14 +17,14 @@ import java.util.logging.Logger;
  *
  * @author razvanvc
  */
-public class E_Tienda extends javax.swing.JFrame {
+public class E_Trabajador extends javax.swing.JFrame {
 
     public static Connection conexion;
     /**
      * Creates new form E_Tienda
      */
-    public E_Tienda(Connection c) {
-        E_Tienda.conexion = c;
+    public E_Trabajador(Connection c) {
+        E_Trabajador.conexion = c;
         initComponents();
         rellenaCB();
     }
@@ -44,7 +45,7 @@ public class E_Tienda extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lbl_Info.setText("Selecciona la tienda que quieras eliminar");
+        lbl_Info.setText("Selecciona el trabajador que quieras eliminar");
 
         cb_TS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -94,7 +95,7 @@ public class E_Tienda extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(268, 136));
+        setSize(new java.awt.Dimension(293, 136));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -116,9 +117,9 @@ public class E_Tienda extends javax.swing.JFrame {
 
         try {
             //if(tf_Nombre.equals(""))
-            s.executeUpdate("DELETE FROM tienda WHERE nombre = '"+cb_TS.getItemAt(cb_TS.getSelectedIndex())+"'");
+            s.executeUpdate("DELETE FROM trabajador WHERE dni = '"+cb_TS.getItemAt(cb_TS.getSelectedIndex())+"'");
         } catch (SQLException ex) {
-            Logger.getLogger(E_Tienda.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(E_Trabajador.class.getName()).log(Level.SEVERE, null, ex);
         }
         rellenaCB();
     }//GEN-LAST:event_btn_DeleteActionPerformed
@@ -140,20 +141,21 @@ public class E_Tienda extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(E_Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(E_Trabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(E_Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(E_Trabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(E_Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(E_Trabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(E_Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(E_Trabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new E_Tienda(conexion).setVisible(true);
+                new E_Trabajador(conexion).setVisible(true);
             }
         });
     }
@@ -169,7 +171,7 @@ public class E_Tienda extends javax.swing.JFrame {
             System.out.println("probando conexion de consulta");
         }
         try {
-            rs = s.executeQuery("SELECT * FROM tienda");
+            rs = s.executeQuery("SELECT * FROM trabajador");
             while (rs.next()) {
                 cb_TS.addItem(rs.getString(1));
             }

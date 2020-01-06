@@ -5,6 +5,7 @@
  */
 package MenusTablas;
 
+import EliminarElementosTablas.E_Tienda;
 import VisualizarTablas.Ver_Tienda;
 import java.sql.Connection;
 

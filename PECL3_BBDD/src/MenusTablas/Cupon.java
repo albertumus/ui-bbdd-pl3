@@ -5,6 +5,7 @@
  */
 package MenusTablas;
 
+import EliminarElementosTablas.E_Cupon;
 import VisualizarTablas.Ver_Cupon;
 import java.sql.Connection;
 
@@ -108,6 +109,8 @@ public static Connection conexion;
 
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
+        E_Cupon ventana = new E_Cupon(conexion);
+        ventana.setVisible(true);
     }//GEN-LAST:event_btn_EliminarActionPerformed
 
     private void btn_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerActionPerformed
