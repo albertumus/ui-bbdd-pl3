@@ -211,6 +211,7 @@ public class Consultas extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "No se pudo realizar esta consulta", "Error en la Consulta", JOptionPane.ERROR_MESSAGE);
         }
+        cb_qPL2.setSelectedIndex(0);
     }//GEN-LAST:event_btn_ConsultaActionPerformed
 
     private void cb_qPL2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_qPL2ActionPerformed
