@@ -71,7 +71,7 @@ public final class N_Opinion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lbl_Info.setText("Seleccione una opinion de la lista:");
+        lbl_Info.setText("Rellene los siguientes campos:");
 
         lbl_id.setText("ID:");
 
