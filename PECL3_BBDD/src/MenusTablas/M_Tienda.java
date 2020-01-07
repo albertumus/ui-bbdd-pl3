@@ -6,7 +6,6 @@
 package MenusTablas;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -196,6 +195,7 @@ public final class M_Tienda extends javax.swing.JFrame {
     private void btn_ModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModifyActionPerformed
         // TODO add your handling code here:
         modificarDatos();
+
     }//GEN-LAST:event_btn_ModifyActionPerformed
 
     /**
@@ -234,7 +234,7 @@ public final class M_Tienda extends javax.swing.JFrame {
         });
     }
 
-    private void modificarDatos(){
+    private void modificarDatos() {
 
         Statement s = null;
         //Creamos la query
@@ -245,17 +245,14 @@ public final class M_Tienda extends javax.swing.JFrame {
         }
         try {
             //UPDATE tienda SET ciudad = 'Alcala', barrio = 'El Ensanche' WHERE nombre = 'Ahorramas';
-            s.executeUpdate("UPDATE tienda SET ciudad = '"+tf_CiudadN.getText()+"', barrio = '"+tf_BarrioN.getText()+"' WHERE nombre = '"+cb_TS.getItemAt(cb_TS.getSelectedIndex())+"'");
-//            while (rs.next()) {
-//                tf_NombreA.setText(rs.getString(1));
-//                tf_CiudadA.setText(rs.getString(2));
-//                tf_BarrioA.setText(rs.getString(3));
-//            }
+            s.executeUpdate("UPDATE tienda SET ciudad = '" + tf_CiudadN.getText() + "', barrio = '" + tf_BarrioN.getText() + "' WHERE nombre = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
+            rellenaDatos();
+            limpiador();
         } catch (SQLException ex) {
             Logger.getLogger(M_Tienda.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     private void rellenaDatos() {
         ResultSet rs = null;
         Statement s = null;
@@ -315,4 +312,9 @@ public final class M_Tienda extends javax.swing.JFrame {
     private javax.swing.JTextField tf_CiudadN;
     private javax.swing.JTextField tf_NombreA;
     // End of variables declaration//GEN-END:variables
+
+    private void limpiador() {
+        tf_CiudadN.setText("");
+        tf_BarrioN.setText("");
+    }
 }
