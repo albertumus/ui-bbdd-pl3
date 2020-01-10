@@ -142,7 +142,7 @@ public class Iniciar_Sesion extends javax.swing.JFrame {
         
 
         try {
-            conexion = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:8000/dbPEC", user, password);
+            conexion = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:8000/pec3", user, password);
         } catch (SQLException se) {
             //System.out.println("No se pudo establecer la conexion");
             JOptionPane.showMessageDialog(null, se.getMessage(), "Error de Conexión", JOptionPane.ERROR_MESSAGE);

@@ -236,7 +236,6 @@ public class Consultas extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     private void rellenaFilas(ResultSet rs) {
@@ -256,7 +255,6 @@ public class Consultas extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Consultas.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     private void consultaPredefinida(ResultSet rs, Statement s) {

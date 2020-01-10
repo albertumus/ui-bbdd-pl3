@@ -20,5 +20,4 @@ public class PECL3_BBDD {
         Iniciar_Sesion nt = new Iniciar_Sesion();
         nt.setVisible(true);
     }
-    
 }

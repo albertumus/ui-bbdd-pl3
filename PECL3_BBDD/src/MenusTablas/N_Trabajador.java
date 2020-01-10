@@ -8,6 +8,7 @@ package MenusTablas;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,18 +41,18 @@ public final class N_Trabajador extends javax.swing.JFrame {
         tf_DNI = new javax.swing.JTextField();
         btn_Modify = new javax.swing.JButton();
         btn_Exit = new javax.swing.JButton();
-        cb_NMediaN = new javax.swing.JComboBox<>();
+        cb_NMedia = new javax.swing.JComboBox<>();
         lbl_Fecha1 = new javax.swing.JLabel();
         lbl_Hora1 = new javax.swing.JLabel();
         lbl_nSocio2 = new javax.swing.JLabel();
         lbl_nSocio3 = new javax.swing.JLabel();
         lbl_TelefonoN = new javax.swing.JLabel();
-        tf_TelefonoN = new javax.swing.JTextField();
-        cb_TurnoN = new javax.swing.JComboBox<>();
-        cb_NTiendaN = new javax.swing.JComboBox<>();
+        tf_Telefono = new javax.swing.JTextField();
+        cb_Turno = new javax.swing.JComboBox<>();
+        cb_NTienda = new javax.swing.JComboBox<>();
         lbl_NombreN = new javax.swing.JLabel();
-        tf_NombreN = new javax.swing.JTextField();
-        tf_MovilN = new javax.swing.JTextField();
+        tf_Nombre = new javax.swing.JTextField();
+        tf_Movil = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -73,7 +74,7 @@ public final class N_Trabajador extends javax.swing.JFrame {
             }
         });
 
-        cb_NMediaN.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona una puntuacion...", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        cb_NMedia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
         lbl_Fecha1.setText("Movil:");
 
@@ -85,7 +86,7 @@ public final class N_Trabajador extends javax.swing.JFrame {
 
         lbl_TelefonoN.setText("Telefono:");
 
-        cb_TurnoN.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mañana", "Tarde" }));
+        cb_Turno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mañana", "Tarde" }));
 
         lbl_NombreN.setText("Nombre:");
 
@@ -102,35 +103,35 @@ public final class N_Trabajador extends javax.swing.JFrame {
                         .addComponent(btn_Modify, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(lbl_Info)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl_DNI, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tf_DNI, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(lbl_nSocio2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(lbl_nSocio3)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(lbl_TelefonoN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(lbl_Fecha1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(lbl_Hora1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(lbl_NombreN, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(tf_TelefonoN, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cb_TurnoN, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cb_NTiendaN, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cb_NMediaN, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tf_NombreN)
-                                    .addComponent(tf_MovilN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(lbl_Info)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lbl_DNI, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tf_DNI, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGap(1, 1, 1)
+                                            .addComponent(lbl_nSocio2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lbl_nSocio3)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(lbl_TelefonoN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lbl_Fecha1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lbl_Hora1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(lbl_NombreN, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(tf_Telefono, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(cb_Turno, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cb_NTienda, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cb_NMedia, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tf_Nombre)
+                                        .addComponent(tf_Movil, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -145,26 +146,26 @@ public final class N_Trabajador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_NombreN)
-                    .addComponent(tf_NombreN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_TelefonoN)
-                    .addComponent(tf_TelefonoN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_Telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_Fecha1)
-                    .addComponent(tf_MovilN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_Movil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_Hora1)
-                    .addComponent(cb_TurnoN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_Turno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_nSocio3)
-                    .addComponent(cb_NTiendaN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_NTienda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cb_NMediaN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_NMedia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_nSocio2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +185,9 @@ public final class N_Trabajador extends javax.swing.JFrame {
 
     private void btn_ModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModifyActionPerformed
         // TODO add your handling code here:
-        crearTrabajador();
+        if (comprobarTrabajador()) {
+            insertarTrabajador();
+        }
     }//GEN-LAST:event_btn_ModifyActionPerformed
 
     /**
@@ -237,39 +240,54 @@ public final class N_Trabajador extends javax.swing.JFrame {
         });
     }
 
-    private void crearTrabajador() {
+    private boolean comprobarTrabajador() {
 
-        Statement s = null;
-        //Creamos la query
-        String turno = null;
-        turno = TurnoNuevo();
-        try {
-            s = conexion.createStatement();
-        } catch (SQLException se) {
-            System.out.println("probando conexion de consulta");
+        boolean salida = false;
+        boolean NT;
+        boolean NM;
+
+        
+        if (tf_Telefono.getText().equals("") || tf_Nombre.getText().equals("") || tf_Movil.getText().equals("") || tf_DNI.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No se pueden introducir campos vacios", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } else {
+
+            NT = comprobarNumero(tf_Telefono.getText());
+            NM = comprobarNumero(tf_Movil.getText());
+            System.out.println(NT + " | " + NM);
+
+            if (NT == false || NM == false) {
+                JOptionPane.showMessageDialog(null, "Los numeros han de ser de 9 cifras y todos los caracteres han de ser numericos", "ERROR", JOptionPane.ERROR_MESSAGE);
+            } else {
+                if (tf_DNI.getText().length() != 9) {
+                    JOptionPane.showMessageDialog(null, "El DNI ha de tener 9 caracteres", "ERROR", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    salida = true;
+                }
+            }
         }
-        try {
-            //NSERT INTO public.trabajador (dni, nombre, telefono, movil, turno, nombre_tienda, nota_media) VALUES ('16590814Y', 'Rogan Clay', '123456789', '5', false, 'Mercadona', 2);
-            s.executeUpdate("INSERT INTO public.trabajador (dni, nombre, telefono, movil, turno, nombre_tienda, nota_media) VALUES('" + tf_DNI.getText() + "', '" + tf_NombreN.getText() + "', '" + tf_TelefonoN.getText() + "', '"
-                    + tf_MovilN.getText() + "', '" + turno + "', '" + cb_NTiendaN.getItemAt(cb_NTiendaN.getSelectedIndex()) + "', " + cb_NMediaN.getSelectedIndex() + ")");
-            System.out.println("Done");
-        } catch (SQLException ex) {
-            Logger.getLogger(N_Trabajador.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        return salida;
     }
 
+    /**
+     * Comprueba el valor del CB para introducirlo en la BD
+     *
+     * @return "true" si es por la mañana | "false" si es por la tarde
+     */
     private String TurnoNuevo() {
         String Salida = null;
-        if (cb_TurnoN.getSelectedIndex() == 0) {
+        if (cb_Turno.getSelectedIndex() == 0) {
             Salida = "true";
         } else {
             Salida = "false";
         }
         return Salida;
     }
-    
-    private void rellenarCBTienda(){
-        cb_NTiendaN.removeAllItems();
+
+    /**
+     * Rellena el CB_NTienda con los datos de las tiendas en la BD
+     */
+    private void rellenarCBTienda() {
+        cb_NTienda.removeAllItems();
         ResultSet rs = null;
         Statement s = null;
         //cb_TS.addItem("Seleccione una opinion...");
@@ -282,19 +300,39 @@ public final class N_Trabajador extends javax.swing.JFrame {
         try {
             rs = s.executeQuery("SELECT * FROM tienda");
             while (rs.next()) {
-                cb_NTiendaN.addItem(rs.getString(1));
+                cb_NTienda.addItem(rs.getString(1));
             }
         } catch (SQLException ex) {
             Logger.getLogger(M_Trabajador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+    /**
+     * Comprueba si un String es un numero
+     *
+     * @param num
+     * @return false si no lo es | true si lo es
+     */
+    private boolean comprobarNumero(String num) {
+        boolean r = false;
+        try {
+            Integer.valueOf(num);
+            r = true;
+        } catch (Exception e) {
+            r = false;
+        }
+        if (num.length() != 9) {
+            r = false;
+        }
+        return r;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Exit;
     private javax.swing.JButton btn_Modify;
-    private javax.swing.JComboBox<String> cb_NMediaN;
-    private javax.swing.JComboBox<String> cb_NTiendaN;
-    private javax.swing.JComboBox<String> cb_TurnoN;
+    private javax.swing.JComboBox<String> cb_NMedia;
+    private javax.swing.JComboBox<String> cb_NTienda;
+    private javax.swing.JComboBox<String> cb_Turno;
     private javax.swing.JLabel lbl_DNI;
     private javax.swing.JLabel lbl_Fecha1;
     private javax.swing.JLabel lbl_Hora1;
@@ -304,9 +342,30 @@ public final class N_Trabajador extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_nSocio2;
     private javax.swing.JLabel lbl_nSocio3;
     private javax.swing.JTextField tf_DNI;
-    private javax.swing.JTextField tf_MovilN;
-    private javax.swing.JTextField tf_NombreN;
-    private javax.swing.JTextField tf_TelefonoN;
+    private javax.swing.JTextField tf_Movil;
+    private javax.swing.JTextField tf_Nombre;
+    private javax.swing.JTextField tf_Telefono;
     // End of variables declaration//GEN-END:variables
 
+    private void insertarTrabajador() {
+        Statement s = null;
+        String turno = null;
+        turno = TurnoNuevo();
+        try {
+            s = conexion.createStatement();
+        } catch (SQLException se) {
+            System.out.println("probando conexion de consulta");
+        }
+        try {
+            //NSERT INTO public.trabajador (dni, nombre, telefono, movil, turno, nombre_tienda, nota_media) VALUES ('16590814Y', 'Rogan Clay', '123456789', '5', false, 'Mercadona', 2);
+            s.executeUpdate("INSERT INTO public.trabajador (dni, nombre, telefono, movil, turno, nombre_tienda, nota_media) VALUES('" + tf_DNI.getText() + "', '" + tf_Nombre.getText() + "', '" + tf_Telefono.getText() + "', '"
+                    + tf_Movil.getText() + "', '" + turno + "', '" + cb_NTienda.getItemAt(cb_NTienda.getSelectedIndex()) + "', " + cb_NMedia.getItemAt(cb_NMedia.getSelectedIndex()) + ")");
+            //JOptionPane.showOptionDialog(rootPane, s, turno, WIDTH, HEIGHT, null, null, NORMAL);
+            JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            this.setVisible(false);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            //Logger.getLogger(N_Trabajador.class.getName()).log(Level.SEVERE, null, ex); 
+        }
+    }
 }

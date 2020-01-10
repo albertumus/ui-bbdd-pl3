@@ -10,7 +10,6 @@ import Eliminar.Consulta_Ticket;
 import VentanasExtra.Consultas;
 import Eliminar.Devolver_Producto;
 import VentanasExtra.Iniciar_Sesion;
-import Eliminar.N_Ticket;
 
 /**
  *
@@ -119,10 +118,7 @@ public class Vista_Cajero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_NTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NTicketActionPerformed
-        // TODO add your handling code here:
-        
-        N_Ticket nt = new N_Ticket();
-        nt.setVisible(true);
+
     }//GEN-LAST:event_btn_NTicketActionPerformed
 
     private void btn_DevolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DevolverActionPerformed
