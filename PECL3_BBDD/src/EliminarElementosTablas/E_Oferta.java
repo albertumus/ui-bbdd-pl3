@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 public class E_Oferta extends javax.swing.JFrame {
 
     public static Connection conexion;
+
     /**
      * Creates new form E_Tienda
      */
@@ -42,6 +43,7 @@ public class E_Oferta extends javax.swing.JFrame {
         btn_Exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Eliminar Oferta");
 
         lbl_Info.setText("Selecciona la oferta que quieras eliminar");
 
@@ -97,12 +99,22 @@ public class E_Oferta extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Salimos de esta ventana
+     *
+     * @param evt
+     */
     private void btn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExitActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btn_ExitActionPerformed
 
-    @SuppressWarnings ({"null", "UseSpecificCatch"})
+    /**
+     * Elimina la oferta seleccionada de la BD
+     *
+     * @param evt
+     */
+    @SuppressWarnings({"null", "UseSpecificCatch"})
     private void btn_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DeleteActionPerformed
         // TODO add your handling code here:
         Statement s = null;
@@ -116,11 +128,11 @@ public class E_Oferta extends javax.swing.JFrame {
 
         try {
             //if(tf_Nombre.equals(""))
-            s.executeUpdate("DELETE FROM oferta WHERE id_oferta = '"+cb_TS.getItemAt(cb_TS.getSelectedIndex())+"'");
+            s.executeUpdate("DELETE FROM oferta WHERE id_oferta = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        rellenaCB();
+        confirmacion("¿Desea eliminar mas ofertas?", "Eliminar Oferta");
     }//GEN-LAST:event_btn_DeleteActionPerformed
 
     /**
@@ -144,7 +156,7 @@ public class E_Oferta extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        
+
         //</editor-fold>
         //</editor-fold>
 
@@ -157,6 +169,9 @@ public class E_Oferta extends javax.swing.JFrame {
         });
     }
 
+    /**
+     * Rellena el CB_TS con las Ofertas de la BD
+     */
     @SuppressWarnings({"UseSpecificCatch", "null"})
     private void rellenaCB() {
         cb_TS.removeAllItems();
@@ -177,6 +192,28 @@ public class E_Oferta extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
 
+    }
+
+    /**
+     * Crea un JOptionPane que te hace una pregunta segun P
+     *
+     * @param P Pregunta que aparece en el JOptionPane
+     * @param T Titulo del JOptionPane
+     */
+    private void confirmacion(String P, String T) {
+        int n = JOptionPane.showConfirmDialog(
+                null,
+                P,
+                T,
+                JOptionPane.YES_NO_OPTION);
+        if (n == JOptionPane.YES_OPTION) {
+            E_Oferta ventana = new E_Oferta(conexion);
+            ventana.setVisible(true);
+            this.setVisible(false);
+            //Abrir nueva ventana para insertar Ticket en cupon
+        } else {
+            this.setVisible(false);
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Delete;

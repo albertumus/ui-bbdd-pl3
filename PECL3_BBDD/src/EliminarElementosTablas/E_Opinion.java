@@ -5,13 +5,11 @@
  */
 package EliminarElementosTablas;
 
-import MenusTablas.M_Tienda;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +18,7 @@ import java.util.logging.Logger;
 public class E_Opinion extends javax.swing.JFrame {
 
     public static Connection conexion;
+
     /**
      * Creates new form E_Tienda
      */
@@ -99,11 +98,22 @@ public class E_Opinion extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Salimos de esta ventana
+     *
+     * @param evt
+     */
     private void btn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExitActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btn_ExitActionPerformed
 
+    /**
+     * Elimina la oferta seleccionada de la BD
+     *
+     * @param evt
+     */
+    @SuppressWarnings({"null", "UseSpecificCatch"})
     private void btn_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DeleteActionPerformed
         // TODO add your handling code here:
         Statement s = null;
@@ -117,9 +127,9 @@ public class E_Opinion extends javax.swing.JFrame {
 
         try {
             //if(tf_Nombre.equals(""))
-            s.executeUpdate("DELETE FROM opinion WHERE id_opinion = '"+cb_TS.getItemAt(cb_TS.getSelectedIndex())+"'");
-        } catch (SQLException ex) {
-            Logger.getLogger(E_Opinion.class.getName()).log(Level.SEVERE, null, ex);
+            s.executeUpdate("DELETE FROM opinion WHERE id_opinion = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         rellenaCB();
     }//GEN-LAST:event_btn_DeleteActionPerformed
@@ -140,26 +150,28 @@ public class E_Opinion extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(E_Opinion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(E_Opinion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(E_Opinion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(E_Opinion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
 
+        //</editor-fold>
+        //</editor-fold>
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @SuppressWarnings("override")
             public void run() {
                 new E_Opinion(conexion).setVisible(true);
             }
         });
     }
 
+    /**
+     * Rellena el CB_TS con las Opiniones de la BD
+     */
+    @SuppressWarnings({"null", "UseSpecificCatch"})
     private void rellenaCB() {
         cb_TS.removeAllItems();
         ResultSet rs = null;
@@ -175,10 +187,32 @@ public class E_Opinion extends javax.swing.JFrame {
             while (rs.next()) {
                 cb_TS.addItem(rs.getString(1));
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(M_Tienda.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+        confirmacion("¿Desea eliminar mas opiniones?", "Eliminar Opinion");
+    }
 
+    /**
+     * Crea un JOptionPane que te hace una pregunta segun P
+     *
+     * @param P Pregunta que aparece en el JOptionPane
+     * @param T Titulo del JOptionPane
+     */
+    private void confirmacion(String P, String T) {
+        int n = JOptionPane.showConfirmDialog(
+                null,
+                P,
+                T,
+                JOptionPane.YES_NO_OPTION);
+        if (n == JOptionPane.YES_OPTION) {
+            E_Cupon ventana = new E_Cupon(conexion);
+            ventana.setVisible(true);
+            this.setVisible(false);
+            //Abrir nueva ventana para insertar Ticket en cupon
+        } else {
+            this.setVisible(false);
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Delete;

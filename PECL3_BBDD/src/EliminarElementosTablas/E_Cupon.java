@@ -42,6 +42,7 @@ public class E_Cupon extends javax.swing.JFrame {
         btn_Exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Eliminar Cupon");
 
         lbl_Info.setText("Selecciona el cupon que quieras eliminar");
 
@@ -97,11 +98,19 @@ public class E_Cupon extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Salimos de esta ventana
+     * @param evt 
+     */
     private void btn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExitActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btn_ExitActionPerformed
 
+    /**
+     * Elimina el cupon seleccionado de la BD
+     * @param evt 
+     */
     @SuppressWarnings({"null", "UseSpecificCatch"})
     private void btn_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DeleteActionPerformed
         // TODO add your handling code here:
@@ -120,7 +129,7 @@ public class E_Cupon extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        rellenaCB();
+        confirmacion("¿Desea eliminar mas cupones?","Eliminar Cupon");
     }//GEN-LAST:event_btn_DeleteActionPerformed
 
     /**
@@ -155,6 +164,9 @@ public class E_Cupon extends javax.swing.JFrame {
         });
     }
 
+    /**
+     * Rellena el CB_TS con los cupones de la BD
+     */
     @SuppressWarnings({"null", "UseSpecificCatch"})
     private void rellenaCB() {
         cb_TS.removeAllItems();
@@ -175,6 +187,27 @@ public class E_Cupon extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
 
+    }
+    
+    /**
+     * Crea un JOptionPane que te hace una pregunta segun P
+     * @param P Pregunta que aparece en el JOptionPane
+     * @param T Titulo del JOptionPane
+     */
+    private void confirmacion(String P,String T) {
+        int n = JOptionPane.showConfirmDialog(
+                null,
+                P,
+                T,
+                JOptionPane.YES_NO_OPTION);
+        if (n == JOptionPane.YES_OPTION) {
+            E_Cupon ventana = new E_Cupon(conexion);
+            ventana.setVisible(true);
+            this.setVisible(false);
+            //Abrir nueva ventana para insertar Ticket en cupon
+        } else {
+            this.setVisible(false);
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Delete;

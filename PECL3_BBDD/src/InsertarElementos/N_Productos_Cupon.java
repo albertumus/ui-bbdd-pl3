@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MenusTablas;
+package InsertarElementos;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -24,6 +24,8 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
 
     /**
      * Creates new form N_Productos_Cupon
+     * @param NTicket Numero del Ticket
+     * @param c Conexion con la BD
      */
     public N_Productos_Cupon(String NTicket, Connection c) {
         N_Productos_Cupon.NTicket = NTicket;
@@ -127,11 +129,19 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Sale de esta ventana sin conservar los cambios
+     * @param evt 
+     */
     private void btn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExitActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btn_ExitActionPerformed
 
+    /**
+     * Añade a la BD a la tabla Productos_Cupon
+     * @param evt 
+     */
     @SuppressWarnings({"UseSpecificCatch", "null"})
     private void btn_AnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AnadirActionPerformed
         // TODO add your handling code here:
@@ -151,7 +161,7 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
                         s.executeUpdate("INSERT INTO public.productos_comprados (codigo_producto,id_ticket_ticket,cantidad) VALUES ('" + cb_Producto.getItemAt(cb_Producto.getSelectedIndex())
                                 + "','" + tf_Ticket.getText() + "','" + tf_Cantidad.getText() + "')");
                         JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
-                        confirmacion();
+                        confirmacion("¿Deseas añadir mas productos?","Añadir Productos");
                     } catch (Exception se) {
                         JOptionPane.showMessageDialog(null, se.getMessage(), "Error en la Insercion", JOptionPane.ERROR_MESSAGE);
                     }
@@ -180,19 +190,16 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(N_Productos_Cupon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(N_Productos_Cupon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(N_Productos_Cupon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(N_Productos_Cupon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @SuppressWarnings("override")
             public void run() {
                 new N_Productos_Cupon(NTicket, conexion).setVisible(true);
             }
@@ -217,11 +224,16 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
         return r;
     }
 
-    private void confirmacion() {
+    /**
+     * Crea un JOptionPane que te hace una pregunta segun P
+     * @param P Pregunta que aparece en el JOptionPane
+     * @param T Titulo del JOptionPane
+     */
+    private void confirmacion(String P,String T) {
         int n = JOptionPane.showConfirmDialog(
                 null,
-                "¿Deseas añadir mas productos?",
-                "Añadir Productos",
+                P,
+                T,
                 JOptionPane.YES_NO_OPTION);
         if (n == JOptionPane.YES_OPTION) {
             N_Productos_Cupon ventana = new N_Productos_Cupon(tf_Ticket.getText(), conexion);
@@ -233,6 +245,9 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
         }
     }
 
+    /** 
+     * Rellena el CBProducto
+     */
     @SuppressWarnings("null")
     private void rellenarCBProducto() {
         cb_Producto.removeAllItems();

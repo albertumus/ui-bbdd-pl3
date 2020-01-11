@@ -43,9 +43,9 @@
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="cb_TrabajadorN" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tf_TotalN" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="cb_NSocioN" alignment="0" min="-2" pref="237" max="-2" attributes="0"/>
+                                  <Component id="cb_Trabajador" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tf_Total" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cb_NSocio" alignment="0" min="-2" pref="237" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -58,7 +58,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lbl_id" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="tf_IDA" max="32767" attributes="0"/>
+                              <Component id="tf_ID" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                           </Group>
                           <Component id="p_Hora" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -78,7 +78,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbl_id" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tf_IDA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tf_ID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="p_Hora1" min="-2" max="-2" attributes="0"/>
@@ -87,17 +87,17 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbl_nSocio2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cb_NSocioN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cb_NSocio" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbl_nSocio3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cb_TrabajadorN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cb_Trabajador" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbl_nSocio4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tf_TotalN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tf_Total" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -120,7 +120,7 @@
         <Property name="text" type="java.lang.String" value="ID:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tf_IDA">
+    <Component class="javax.swing.JTextField" name="tf_ID">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
@@ -151,7 +151,7 @@
         <Property name="text" type="java.lang.String" value="Trabajador:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cb_NSocioN">
+    <Component class="javax.swing.JComboBox" name="cb_NSocio">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
@@ -163,7 +163,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cb_TrabajadorN">
+    <Component class="javax.swing.JComboBox" name="cb_Trabajador">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
@@ -178,7 +178,7 @@
         <Property name="text" type="java.lang.String" value="Total:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tf_TotalN">
+    <Component class="javax.swing.JTextField" name="tf_Total">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="0"/>
@@ -193,15 +193,15 @@
                   <Component id="lbl_Hora1" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabel1" min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="lbl_Hora" min="-2" pref="75" max="-2" attributes="0"/>
                       <Component id="tf_HoraH" min="-2" pref="75" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel2" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="lbl_Minuto" min="-2" pref="75" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="lbl_Segundo" min="-2" pref="75" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="tf_HoraM" min="-2" pref="75" max="-2" attributes="0"/>
@@ -217,9 +217,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Hora" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Minuto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Segundo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -239,17 +239,17 @@
         </Component>
         <Component class="javax.swing.JTextField" name="tf_HoraS">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lbl_Hora">
           <Properties>
             <Property name="text" type="java.lang.String" value="Hora:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="lbl_Minuto">
           <Properties>
             <Property name="text" type="java.lang.String" value="Minuto:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="lbl_Segundo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Segundo:"/>
           </Properties>
@@ -270,15 +270,15 @@
                   <Component id="lbl_Hora2" min="-2" pref="100" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabel4" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="lbl_Dia" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                       <Component id="tf_FechaD" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel5" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="lbl_Mes" min="-2" pref="75" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel6" min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="lbl_Anno" min="-2" pref="75" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="tf_FechaM" min="-2" pref="75" max="-2" attributes="0"/>
@@ -294,9 +294,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Dia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Mes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Anno" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -317,17 +317,17 @@
         </Component>
         <Component class="javax.swing.JTextField" name="tf_FechaA">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="lbl_Dia">
           <Properties>
             <Property name="text" type="java.lang.String" value="Dia:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="lbl_Mes">
           <Properties>
             <Property name="text" type="java.lang.String" value="Mes:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="lbl_Anno">
           <Properties>
             <Property name="text" type="java.lang.String" value="A&#xf1;o:"/>
           </Properties>

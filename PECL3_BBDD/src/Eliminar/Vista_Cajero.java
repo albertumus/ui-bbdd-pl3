@@ -9,7 +9,7 @@ import java.sql.Connection;
 import Eliminar.Consulta_Ticket;
 import VentanasExtra.Consultas;
 import Eliminar.Devolver_Producto;
-import MenusTablas.N_Ticket;
+import InsertarElementos.N_Ticket;
 import VentanasExtra.Iniciar_Sesion;
 
 /**

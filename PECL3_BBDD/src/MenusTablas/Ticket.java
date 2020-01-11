@@ -5,6 +5,7 @@
  */
 package MenusTablas;
 
+import InsertarElementos.N_Ticket;
 import EliminarElementosTablas.E_Ticket;
 import VisualizarTablas.Ver_Ticket;
 import java.sql.Connection;
