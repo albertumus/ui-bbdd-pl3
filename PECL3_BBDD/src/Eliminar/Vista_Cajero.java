@@ -9,6 +9,7 @@ import java.sql.Connection;
 import Eliminar.Consulta_Ticket;
 import VentanasExtra.Consultas;
 import Eliminar.Devolver_Producto;
+import MenusTablas.N_Ticket;
 import VentanasExtra.Iniciar_Sesion;
 
 /**
@@ -119,6 +120,8 @@ public class Vista_Cajero extends javax.swing.JFrame {
 
     private void btn_NTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NTicketActionPerformed
 
+        N_Ticket nt = new N_Ticket(conexion);
+        nt.setVisible(true);
     }//GEN-LAST:event_btn_NTicketActionPerformed
 
     private void btn_DevolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DevolverActionPerformed

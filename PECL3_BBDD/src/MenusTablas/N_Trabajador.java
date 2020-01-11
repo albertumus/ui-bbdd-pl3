@@ -313,6 +313,7 @@ public final class N_Trabajador extends javax.swing.JFrame {
      * @param num
      * @return false si no lo es | true si lo es
      */
+    @SuppressWarnings("UseSpecificCatch")
     private boolean comprobarNumero(String num) {
         boolean r = false;
         try {
@@ -347,6 +348,7 @@ public final class N_Trabajador extends javax.swing.JFrame {
     private javax.swing.JTextField tf_Telefono;
     // End of variables declaration//GEN-END:variables
 
+    @SuppressWarnings({"null", "UseSpecificCatch"})
     private void insertarTrabajador() {
         Statement s = null;
         String turno = null;

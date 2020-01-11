@@ -351,14 +351,16 @@ public final class N_Ticket extends javax.swing.JFrame {
     private void confirmacion() {
         int n = JOptionPane.showConfirmDialog(
                 null,
-                "¿Deseas Insertar productos en el ticket?",
-                "Insertar Productos",
+                "¿Deseas añadir productos en el ticket?",
+                "Añadir Productos",
                 JOptionPane.YES_NO_OPTION);
         if (n == JOptionPane.YES_OPTION) {
-            JOptionPane.showMessageDialog(null, "HELLO");
-
+            N_Productos_Cupon ventana = new N_Productos_Cupon(tf_IDA.getText(),conexion);
+            ventana.setVisible(true);
+            this.setVisible(false);
+            //Abrir nueva ventana para insertar Ticket en cupon
         } else {
-            JOptionPane.showMessageDialog(null, "GOODBYE");
+            //JOptionPane.showMessageDialog(null, "GOODBYE");
             this.setVisible(false);
         }
     }
