@@ -403,7 +403,7 @@ public final class M_Ticket extends javax.swing.JFrame {
             System.out.println("probando conexion de consulta");
         }
         try {
-            rs = s.executeQuery("SELECT * FROM trabajador");
+            rs = s.executeQuery("SELECT * FROM cajero");
             while (rs.next()) {
                 cb_TrabajadorN.addItem(rs.getString(1));
             }

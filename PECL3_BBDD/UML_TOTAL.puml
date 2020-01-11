@@ -1,0 +1,365 @@
+@startuml
+annotation java.lang.Override
+annotation java.lang.SuppressWarnings
+class Eliminar.Consulta_Ticket
+class Eliminar.Devolver_Producto
+class Eliminar.Vista_Cajero
+class EliminarElementosTablas.E_Cupon
+class EliminarElementosTablas.E_Oferta
+class EliminarElementosTablas.E_Opinion
+class EliminarElementosTablas.E_Producto
+class EliminarElementosTablas.E_Socio
+class EliminarElementosTablas.E_Ticket
+class EliminarElementosTablas.E_Tienda
+class EliminarElementosTablas.E_Trabajador
+class Main.PECL3_BBDD
+class MenusTablas.Cupon
+class MenusTablas.M_Cupon
+class MenusTablas.M_Oferta
+class MenusTablas.M_Opinion
+class MenusTablas.M_Producto
+class MenusTablas.M_Socio
+class MenusTablas.M_Ticket
+class MenusTablas.M_Tienda
+class MenusTablas.M_Trabajador
+class MenusTablas.N_Cupon
+class MenusTablas.N_Oferta
+class MenusTablas.N_Opinion
+class MenusTablas.N_Producto
+class MenusTablas.N_Socio
+class MenusTablas.N_Ticket
+class MenusTablas.N_Tienda
+class MenusTablas.N_Trabajador
+class MenusTablas.Oferta
+class MenusTablas.Opinion
+class MenusTablas.Producto
+class MenusTablas.Socio
+class MenusTablas.Ticket
+class MenusTablas.Tienda
+class MenusTablas.Trabajador
+class VentanasExtra.Consultas
+class VentanasExtra.Iniciar_Sesion
+class VentanasExtra.Main_Menu
+class VisualizarTablas.Ver_Cupon
+class VisualizarTablas.Ver_Oferta
+class VisualizarTablas.Ver_Opinion
+class VisualizarTablas.Ver_Producto
+class VisualizarTablas.Ver_Socio
+class VisualizarTablas.Ver_Ticket
+class VisualizarTablas.Ver_Tienda
+class VisualizarTablas.Ver_Trabajador
+class java.sql.Connection
+class java.sql.ResultSet
+class java.sql.SQLException
+class java.sql.Statement
+class java.text.DateFormat
+class java.text.SimpleDateFormat
+class java.time.LocalDate
+class java.time.LocalDateTime
+class java.time.LocalTime
+class java.time.format.DateTimeFormatter
+class java.util.ArrayList
+class java.util.logging.Level
+class java.util.logging.Logger
+class javax.swing.JFrame
+class javax.swing.JOptionPane
+class javax.swing.table.DefaultTableModel
+Eliminar.Consulta_Ticket ..> java.lang.SuppressWarnings
+Eliminar.Consulta_Ticket --|> javax.swing.JFrame
+Eliminar.Devolver_Producto ..> java.lang.SuppressWarnings
+Eliminar.Devolver_Producto --|> javax.swing.JFrame
+Eliminar.Vista_Cajero ..> java.lang.SuppressWarnings
+Eliminar.Vista_Cajero ..> Eliminar.Consulta_Ticket
+Eliminar.Vista_Cajero ..> Eliminar.Devolver_Producto
+Eliminar.Vista_Cajero ..> VentanasExtra.Consultas
+Eliminar.Vista_Cajero ..> VentanasExtra.Iniciar_Sesion
+Eliminar.Vista_Cajero ..> java.sql.Connection
+Eliminar.Vista_Cajero --|> javax.swing.JFrame
+EliminarElementosTablas.E_Cupon ..> java.lang.SuppressWarnings
+EliminarElementosTablas.E_Cupon ..> MenusTablas.M_Tienda
+EliminarElementosTablas.E_Cupon ..> java.sql.Connection
+EliminarElementosTablas.E_Cupon ..> java.sql.ResultSet
+EliminarElementosTablas.E_Cupon ..> java.sql.SQLException
+EliminarElementosTablas.E_Cupon ..> java.sql.Statement
+EliminarElementosTablas.E_Cupon ..> java.util.logging.Level
+EliminarElementosTablas.E_Cupon ..> java.util.logging.Logger
+EliminarElementosTablas.E_Cupon --|> javax.swing.JFrame
+EliminarElementosTablas.E_Oferta ..> java.lang.SuppressWarnings
+EliminarElementosTablas.E_Oferta ..> MenusTablas.M_Tienda
+EliminarElementosTablas.E_Oferta ..> java.sql.Connection
+EliminarElementosTablas.E_Oferta ..> java.sql.ResultSet
+EliminarElementosTablas.E_Oferta ..> java.sql.SQLException
+EliminarElementosTablas.E_Oferta ..> java.sql.Statement
+EliminarElementosTablas.E_Oferta ..> java.util.logging.Level
+EliminarElementosTablas.E_Oferta ..> java.util.logging.Logger
+EliminarElementosTablas.E_Oferta --|> javax.swing.JFrame
+EliminarElementosTablas.E_Opinion ..> java.lang.SuppressWarnings
+EliminarElementosTablas.E_Opinion ..> MenusTablas.M_Tienda
+EliminarElementosTablas.E_Opinion ..> java.sql.Connection
+EliminarElementosTablas.E_Opinion ..> java.sql.ResultSet
+EliminarElementosTablas.E_Opinion ..> java.sql.SQLException
+EliminarElementosTablas.E_Opinion ..> java.sql.Statement
+EliminarElementosTablas.E_Opinion ..> java.util.logging.Level
+EliminarElementosTablas.E_Opinion ..> java.util.logging.Logger
+EliminarElementosTablas.E_Opinion --|> javax.swing.JFrame
+EliminarElementosTablas.E_Producto ..> java.lang.SuppressWarnings
+EliminarElementosTablas.E_Producto ..> MenusTablas.M_Tienda
+EliminarElementosTablas.E_Producto ..> java.sql.Connection
+EliminarElementosTablas.E_Producto ..> java.sql.ResultSet
+EliminarElementosTablas.E_Producto ..> java.sql.SQLException
+EliminarElementosTablas.E_Producto ..> java.sql.Statement
+EliminarElementosTablas.E_Producto ..> java.util.logging.Level
+EliminarElementosTablas.E_Producto ..> java.util.logging.Logger
+EliminarElementosTablas.E_Producto --|> javax.swing.JFrame
+EliminarElementosTablas.E_Socio ..> java.lang.SuppressWarnings
+EliminarElementosTablas.E_Socio ..> MenusTablas.M_Tienda
+EliminarElementosTablas.E_Socio ..> java.sql.Connection
+EliminarElementosTablas.E_Socio ..> java.sql.ResultSet
+EliminarElementosTablas.E_Socio ..> java.sql.SQLException
+EliminarElementosTablas.E_Socio ..> java.sql.Statement
+EliminarElementosTablas.E_Socio ..> java.util.logging.Level
+EliminarElementosTablas.E_Socio ..> java.util.logging.Logger
+EliminarElementosTablas.E_Socio --|> javax.swing.JFrame
+EliminarElementosTablas.E_Ticket ..> java.lang.SuppressWarnings
+EliminarElementosTablas.E_Ticket ..> MenusTablas.M_Tienda
+EliminarElementosTablas.E_Ticket ..> java.sql.Connection
+EliminarElementosTablas.E_Ticket ..> java.sql.ResultSet
+EliminarElementosTablas.E_Ticket ..> java.sql.SQLException
+EliminarElementosTablas.E_Ticket ..> java.sql.Statement
+EliminarElementosTablas.E_Ticket ..> java.util.logging.Level
+EliminarElementosTablas.E_Ticket ..> java.util.logging.Logger
+EliminarElementosTablas.E_Ticket --|> javax.swing.JFrame
+EliminarElementosTablas.E_Tienda ..> java.lang.SuppressWarnings
+EliminarElementosTablas.E_Tienda ..> MenusTablas.M_Tienda
+EliminarElementosTablas.E_Tienda ..> java.sql.Connection
+EliminarElementosTablas.E_Tienda ..> java.sql.ResultSet
+EliminarElementosTablas.E_Tienda ..> java.sql.SQLException
+EliminarElementosTablas.E_Tienda ..> java.sql.Statement
+EliminarElementosTablas.E_Tienda ..> java.util.logging.Level
+EliminarElementosTablas.E_Tienda ..> java.util.logging.Logger
+EliminarElementosTablas.E_Tienda --|> javax.swing.JFrame
+EliminarElementosTablas.E_Trabajador ..> java.lang.SuppressWarnings
+EliminarElementosTablas.E_Trabajador ..> MenusTablas.M_Tienda
+EliminarElementosTablas.E_Trabajador ..> java.sql.Connection
+EliminarElementosTablas.E_Trabajador ..> java.sql.ResultSet
+EliminarElementosTablas.E_Trabajador ..> java.sql.SQLException
+EliminarElementosTablas.E_Trabajador ..> java.sql.Statement
+EliminarElementosTablas.E_Trabajador ..> java.util.logging.Level
+EliminarElementosTablas.E_Trabajador ..> java.util.logging.Logger
+EliminarElementosTablas.E_Trabajador --|> javax.swing.JFrame
+Main.PECL3_BBDD ..> VentanasExtra.Iniciar_Sesion
+MenusTablas.Cupon ..> java.lang.SuppressWarnings
+MenusTablas.Cupon ..> EliminarElementosTablas.E_Cupon
+MenusTablas.Cupon ..> VisualizarTablas.Ver_Cupon
+MenusTablas.Cupon ..> java.sql.Connection
+MenusTablas.Cupon --|> javax.swing.JFrame
+MenusTablas.M_Cupon ..> java.lang.SuppressWarnings
+MenusTablas.M_Cupon ..> java.util.ArrayList
+MenusTablas.M_Cupon ..> java.util.logging.Level
+MenusTablas.M_Cupon ..> java.util.logging.Logger
+MenusTablas.M_Cupon --|> javax.swing.JFrame
+MenusTablas.M_Oferta ..> java.lang.SuppressWarnings
+MenusTablas.M_Oferta ..> java.text.DateFormat
+MenusTablas.M_Oferta ..> java.text.SimpleDateFormat
+MenusTablas.M_Oferta ..> java.util.ArrayList
+MenusTablas.M_Oferta ..> java.util.logging.Level
+MenusTablas.M_Oferta ..> java.util.logging.Logger
+MenusTablas.M_Oferta --|> javax.swing.JFrame
+MenusTablas.M_Opinion ..> java.lang.SuppressWarnings
+MenusTablas.M_Opinion ..> java.util.logging.Level
+MenusTablas.M_Opinion ..> java.util.logging.Logger
+MenusTablas.M_Opinion --|> javax.swing.JFrame
+MenusTablas.M_Producto ..> java.lang.SuppressWarnings
+MenusTablas.M_Producto ..> java.text.DateFormat
+MenusTablas.M_Producto ..> java.text.SimpleDateFormat
+MenusTablas.M_Producto ..> java.util.ArrayList
+MenusTablas.M_Producto ..> java.util.logging.Level
+MenusTablas.M_Producto ..> java.util.logging.Logger
+MenusTablas.M_Producto --|> javax.swing.JFrame
+MenusTablas.M_Socio ..> java.lang.SuppressWarnings
+MenusTablas.M_Socio ..> java.util.logging.Level
+MenusTablas.M_Socio ..> java.util.logging.Logger
+MenusTablas.M_Socio --|> javax.swing.JFrame
+MenusTablas.M_Ticket ..> java.lang.Override
+MenusTablas.M_Ticket ..> java.lang.SuppressWarnings
+MenusTablas.M_Ticket ..> java.util.logging.Level
+MenusTablas.M_Ticket ..> java.util.logging.Logger
+MenusTablas.M_Ticket --|> javax.swing.JFrame
+MenusTablas.M_Tienda ..> java.lang.SuppressWarnings
+MenusTablas.M_Tienda ..> java.util.logging.Level
+MenusTablas.M_Tienda ..> java.util.logging.Logger
+MenusTablas.M_Tienda --|> javax.swing.JFrame
+MenusTablas.M_Tienda ..> javax.swing.JOptionPane
+MenusTablas.M_Trabajador ..> java.lang.SuppressWarnings
+MenusTablas.M_Trabajador ..> java.util.logging.Level
+MenusTablas.M_Trabajador ..> java.util.logging.Logger
+MenusTablas.M_Trabajador --|> javax.swing.JFrame
+MenusTablas.N_Cupon ..> java.lang.SuppressWarnings
+MenusTablas.N_Cupon ..> java.sql.Connection
+MenusTablas.N_Cupon ..> java.sql.ResultSet
+MenusTablas.N_Cupon ..> java.sql.SQLException
+MenusTablas.N_Cupon ..> java.sql.Statement
+MenusTablas.N_Cupon ..> java.util.logging.Level
+MenusTablas.N_Cupon ..> java.util.logging.Logger
+MenusTablas.N_Cupon --|> javax.swing.JFrame
+MenusTablas.N_Cupon ..> javax.swing.JOptionPane
+MenusTablas.N_Oferta ..> java.lang.SuppressWarnings
+MenusTablas.N_Oferta ..> java.util.logging.Level
+MenusTablas.N_Oferta ..> java.util.logging.Logger
+MenusTablas.N_Oferta --|> javax.swing.JFrame
+MenusTablas.N_Opinion ..> java.lang.SuppressWarnings
+MenusTablas.N_Opinion ..> java.time.LocalDate
+MenusTablas.N_Opinion ..> java.time.LocalDateTime
+MenusTablas.N_Opinion ..> java.time.LocalTime
+MenusTablas.N_Opinion ..> java.time.format.DateTimeFormatter
+MenusTablas.N_Opinion ..> java.util.logging.Level
+MenusTablas.N_Opinion ..> java.util.logging.Logger
+MenusTablas.N_Opinion --|> javax.swing.JFrame
+MenusTablas.N_Producto ..> java.lang.SuppressWarnings
+MenusTablas.N_Producto ..> java.util.logging.Level
+MenusTablas.N_Producto ..> java.util.logging.Logger
+MenusTablas.N_Producto --|> javax.swing.JFrame
+MenusTablas.N_Socio ..> java.lang.SuppressWarnings
+MenusTablas.N_Socio ..> java.util.logging.Level
+MenusTablas.N_Socio ..> java.util.logging.Logger
+MenusTablas.N_Socio --|> javax.swing.JFrame
+MenusTablas.N_Ticket ..> java.lang.Override
+MenusTablas.N_Ticket ..> java.lang.SuppressWarnings
+MenusTablas.N_Ticket ..> java.util.logging.Level
+MenusTablas.N_Ticket ..> java.util.logging.Logger
+MenusTablas.N_Ticket --|> javax.swing.JFrame
+MenusTablas.N_Ticket ..> javax.swing.JOptionPane
+MenusTablas.N_Tienda ..> java.lang.SuppressWarnings
+MenusTablas.N_Tienda ..> java.sql.Connection
+MenusTablas.N_Tienda ..> java.sql.SQLException
+MenusTablas.N_Tienda ..> java.sql.Statement
+MenusTablas.N_Tienda --|> javax.swing.JFrame
+MenusTablas.N_Tienda ..> javax.swing.JOptionPane
+MenusTablas.N_Trabajador ..> java.lang.SuppressWarnings
+MenusTablas.N_Trabajador ..> java.util.logging.Level
+MenusTablas.N_Trabajador ..> java.util.logging.Logger
+MenusTablas.N_Trabajador --|> javax.swing.JFrame
+MenusTablas.N_Trabajador ..> javax.swing.JOptionPane
+MenusTablas.Oferta ..> java.lang.SuppressWarnings
+MenusTablas.Oferta ..> EliminarElementosTablas.E_Oferta
+MenusTablas.Oferta ..> VisualizarTablas.Ver_Oferta
+MenusTablas.Oferta ..> java.sql.Connection
+MenusTablas.Oferta --|> javax.swing.JFrame
+MenusTablas.Opinion ..> java.lang.SuppressWarnings
+MenusTablas.Opinion ..> EliminarElementosTablas.E_Opinion
+MenusTablas.Opinion ..> VisualizarTablas.Ver_Opinion
+MenusTablas.Opinion ..> java.sql.Connection
+MenusTablas.Opinion --|> javax.swing.JFrame
+MenusTablas.Producto ..> java.lang.SuppressWarnings
+MenusTablas.Producto ..> EliminarElementosTablas.E_Producto
+MenusTablas.Producto ..> VisualizarTablas.Ver_Producto
+MenusTablas.Producto ..> java.sql.Connection
+MenusTablas.Producto --|> javax.swing.JFrame
+MenusTablas.Socio ..> java.lang.SuppressWarnings
+MenusTablas.Socio ..> EliminarElementosTablas.E_Socio
+MenusTablas.Socio ..> VisualizarTablas.Ver_Socio
+MenusTablas.Socio ..> java.sql.Connection
+MenusTablas.Socio --|> javax.swing.JFrame
+MenusTablas.Ticket ..> java.lang.SuppressWarnings
+MenusTablas.Ticket ..> EliminarElementosTablas.E_Ticket
+MenusTablas.Ticket ..> VisualizarTablas.Ver_Ticket
+MenusTablas.Ticket ..> java.sql.Connection
+MenusTablas.Ticket --|> javax.swing.JFrame
+MenusTablas.Tienda ..> java.lang.SuppressWarnings
+MenusTablas.Tienda ..> EliminarElementosTablas.E_Tienda
+MenusTablas.Tienda ..> VisualizarTablas.Ver_Tienda
+MenusTablas.Tienda ..> java.sql.Connection
+MenusTablas.Tienda --|> javax.swing.JFrame
+MenusTablas.Trabajador ..> java.lang.SuppressWarnings
+MenusTablas.Trabajador ..> EliminarElementosTablas.E_Trabajador
+MenusTablas.Trabajador ..> VisualizarTablas.Ver_Trabajador
+MenusTablas.Trabajador ..> java.sql.Connection
+MenusTablas.Trabajador --|> javax.swing.JFrame
+VentanasExtra.Consultas ..> java.lang.SuppressWarnings
+VentanasExtra.Consultas ..> java.util.ArrayList
+VentanasExtra.Consultas ..> java.util.logging.Level
+VentanasExtra.Consultas ..> java.util.logging.Logger
+VentanasExtra.Consultas --|> javax.swing.JFrame
+VentanasExtra.Consultas ..> javax.swing.JOptionPane
+VentanasExtra.Consultas ..> javax.swing.table.DefaultTableModel
+VentanasExtra.Iniciar_Sesion ..> java.lang.SuppressWarnings
+VentanasExtra.Iniciar_Sesion ..> java.util.logging.Level
+VentanasExtra.Iniciar_Sesion ..> java.util.logging.Logger
+VentanasExtra.Iniciar_Sesion --|> javax.swing.JFrame
+VentanasExtra.Iniciar_Sesion ..> javax.swing.JOptionPane
+VentanasExtra.Main_Menu ..> java.lang.SuppressWarnings
+VentanasExtra.Main_Menu ..> MenusTablas.Cupon
+VentanasExtra.Main_Menu ..> MenusTablas.Oferta
+VentanasExtra.Main_Menu ..> MenusTablas.Opinion
+VentanasExtra.Main_Menu ..> MenusTablas.Producto
+VentanasExtra.Main_Menu ..> MenusTablas.Socio
+VentanasExtra.Main_Menu ..> MenusTablas.Ticket
+VentanasExtra.Main_Menu ..> MenusTablas.Tienda
+VentanasExtra.Main_Menu ..> MenusTablas.Trabajador
+VentanasExtra.Main_Menu ..> VentanasExtra.Consultas
+VentanasExtra.Main_Menu --|> javax.swing.JFrame
+VisualizarTablas.Ver_Cupon ..> java.lang.SuppressWarnings
+VisualizarTablas.Ver_Cupon ..> VentanasExtra.Consultas
+VisualizarTablas.Ver_Cupon ..> java.util.ArrayList
+VisualizarTablas.Ver_Cupon ..> java.util.logging.Level
+VisualizarTablas.Ver_Cupon ..> java.util.logging.Logger
+VisualizarTablas.Ver_Cupon --|> javax.swing.JFrame
+VisualizarTablas.Ver_Cupon ..> javax.swing.JOptionPane
+VisualizarTablas.Ver_Cupon ..> javax.swing.table.DefaultTableModel
+VisualizarTablas.Ver_Oferta ..> java.lang.SuppressWarnings
+VisualizarTablas.Ver_Oferta ..> VentanasExtra.Consultas
+VisualizarTablas.Ver_Oferta ..> java.util.ArrayList
+VisualizarTablas.Ver_Oferta ..> java.util.logging.Level
+VisualizarTablas.Ver_Oferta ..> java.util.logging.Logger
+VisualizarTablas.Ver_Oferta --|> javax.swing.JFrame
+VisualizarTablas.Ver_Oferta ..> javax.swing.JOptionPane
+VisualizarTablas.Ver_Oferta ..> javax.swing.table.DefaultTableModel
+VisualizarTablas.Ver_Opinion ..> java.lang.SuppressWarnings
+VisualizarTablas.Ver_Opinion ..> VentanasExtra.Consultas
+VisualizarTablas.Ver_Opinion ..> java.util.ArrayList
+VisualizarTablas.Ver_Opinion ..> java.util.logging.Level
+VisualizarTablas.Ver_Opinion ..> java.util.logging.Logger
+VisualizarTablas.Ver_Opinion --|> javax.swing.JFrame
+VisualizarTablas.Ver_Opinion ..> javax.swing.JOptionPane
+VisualizarTablas.Ver_Opinion ..> javax.swing.table.DefaultTableModel
+VisualizarTablas.Ver_Producto ..> java.lang.SuppressWarnings
+VisualizarTablas.Ver_Producto ..> VentanasExtra.Consultas
+VisualizarTablas.Ver_Producto ..> java.util.ArrayList
+VisualizarTablas.Ver_Producto ..> java.util.logging.Level
+VisualizarTablas.Ver_Producto ..> java.util.logging.Logger
+VisualizarTablas.Ver_Producto --|> javax.swing.JFrame
+VisualizarTablas.Ver_Producto ..> javax.swing.JOptionPane
+VisualizarTablas.Ver_Producto ..> javax.swing.table.DefaultTableModel
+VisualizarTablas.Ver_Socio ..> java.lang.SuppressWarnings
+VisualizarTablas.Ver_Socio ..> VentanasExtra.Consultas
+VisualizarTablas.Ver_Socio ..> java.util.ArrayList
+VisualizarTablas.Ver_Socio ..> java.util.logging.Level
+VisualizarTablas.Ver_Socio ..> java.util.logging.Logger
+VisualizarTablas.Ver_Socio --|> javax.swing.JFrame
+VisualizarTablas.Ver_Socio ..> javax.swing.JOptionPane
+VisualizarTablas.Ver_Socio ..> javax.swing.table.DefaultTableModel
+VisualizarTablas.Ver_Ticket ..> java.lang.SuppressWarnings
+VisualizarTablas.Ver_Ticket ..> VentanasExtra.Consultas
+VisualizarTablas.Ver_Ticket ..> java.util.ArrayList
+VisualizarTablas.Ver_Ticket ..> java.util.logging.Level
+VisualizarTablas.Ver_Ticket ..> java.util.logging.Logger
+VisualizarTablas.Ver_Ticket --|> javax.swing.JFrame
+VisualizarTablas.Ver_Ticket ..> javax.swing.JOptionPane
+VisualizarTablas.Ver_Ticket ..> javax.swing.table.DefaultTableModel
+VisualizarTablas.Ver_Tienda ..> java.lang.SuppressWarnings
+VisualizarTablas.Ver_Tienda ..> VentanasExtra.Consultas
+VisualizarTablas.Ver_Tienda ..> java.util.ArrayList
+VisualizarTablas.Ver_Tienda ..> java.util.logging.Level
+VisualizarTablas.Ver_Tienda ..> java.util.logging.Logger
+VisualizarTablas.Ver_Tienda --|> javax.swing.JFrame
+VisualizarTablas.Ver_Tienda ..> javax.swing.JOptionPane
+VisualizarTablas.Ver_Tienda ..> javax.swing.table.DefaultTableModel
+VisualizarTablas.Ver_Trabajador ..> java.lang.SuppressWarnings
+VisualizarTablas.Ver_Trabajador ..> VentanasExtra.Consultas
+VisualizarTablas.Ver_Trabajador ..> java.util.ArrayList
+VisualizarTablas.Ver_Trabajador ..> java.util.logging.Level
+VisualizarTablas.Ver_Trabajador ..> java.util.logging.Logger
+VisualizarTablas.Ver_Trabajador --|> javax.swing.JFrame
+VisualizarTablas.Ver_Trabajador ..> javax.swing.JOptionPane
+VisualizarTablas.Ver_Trabajador ..> javax.swing.table.DefaultTableModel
+@enduml

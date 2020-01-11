@@ -146,11 +146,9 @@ public class N_Tienda extends javax.swing.JFrame {
                 s.executeUpdate("INSERT INTO tienda (nombre, ciudad, barrio) VALUES ('" + tf_Nombre.getText() + "', '" + tf_Ciudad.getText() + "', '" + tf_Barrio.getText() + "')");
                 JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
                 this.setVisible(false);
-            } catch (SQLException se) {
+            } catch (Exception se) {
                 JOptionPane.showMessageDialog(null, se.getMessage(), "Error en la Insercion", JOptionPane.ERROR_MESSAGE);
-                tf_Ciudad.setText("");
-                tf_Barrio.setText("");
-                tf_Nombre.setText("");
+                limpiador();
             }
         }
     }//GEN-LAST:event_btn_CrearActionPerformed
@@ -159,6 +157,11 @@ public class N_Tienda extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_CancelarActionPerformed
 
+    private void limpiador() {
+        tf_Nombre.setText("");
+        tf_Ciudad.setText("");
+        tf_Barrio.setText("");
+    }
     /**
      * @param args the command line arguments
      */

@@ -101,6 +101,8 @@ public static Connection conexion;
 
     private void btn_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevoActionPerformed
         // TODO add your handling code here:
+        N_Ticket ventana = new N_Ticket(conexion);
+        ventana.setVisible(true);
     }//GEN-LAST:event_btn_NuevoActionPerformed
 
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed

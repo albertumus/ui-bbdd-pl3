@@ -8,6 +8,7 @@ package MenusTablas;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -236,20 +237,31 @@ public final class M_Tienda extends javax.swing.JFrame {
 
     private void modificarDatos() {
 
-        Statement s = null;
-        //Creamos la query
-        try {
-            s = conexion.createStatement();
-        } catch (SQLException se) {
-            System.out.println("probando conexion de consulta");
-        }
-        try {
-            //UPDATE tienda SET ciudad = 'Alcala', barrio = 'El Ensanche' WHERE nombre = 'Ahorramas';
-            s.executeUpdate("UPDATE tienda SET ciudad = '" + tf_CiudadN.getText() + "', barrio = '" + tf_BarrioN.getText() + "' WHERE nombre = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
-            rellenaDatos();
-            limpiador();
-        } catch (SQLException ex) {
-            Logger.getLogger(M_Tienda.class.getName()).log(Level.SEVERE, null, ex);
+        if (tf_CiudadN.getText().equals("") || tf_BarrioN.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No se puede insertar una clave vacia", "Error en la Modificacion", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Statement s = null;
+            //Creamos la query
+            try {
+                s = conexion.createStatement();
+            } catch (SQLException se) {
+                System.out.println("probando conexion de consulta");
+            }
+            try {
+                //UPDATE tienda SET ciudad = 'Alcala', barrio = 'El Ensanche' WHERE nombre = 'Ahorramas';
+                s.executeUpdate("UPDATE tienda SET ciudad = '" + tf_CiudadN.getText() + "', barrio = '" + tf_BarrioN.getText() + "' WHERE nombre = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
+                rellenaDatos();
+                limpiador();
+//                JOptionPane.showOptionDialog(null, "¿Desea modificar mas tiendas?", null, WIDTH, HEIGHT, null, null, JOptionPane.INFORMATION_MESSAGE);
+//                if (JOptionPane.NO_OPTION == 1) {
+//                    this.setVisible(false);
+//                } else if(JOptionPane.YES_OPTION == 1){
+//                    this.setVisible(true);
+//                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Error en la Insercion", JOptionPane.ERROR_MESSAGE);
+                Logger.getLogger(M_Tienda.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -294,6 +306,11 @@ public final class M_Tienda extends javax.swing.JFrame {
         }
 
     }
+
+    private void limpiador() {
+        tf_CiudadN.setText("");
+        tf_BarrioN.setText("");
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Exit;
     private javax.swing.JButton btn_Modify;
@@ -313,8 +330,4 @@ public final class M_Tienda extends javax.swing.JFrame {
     private javax.swing.JTextField tf_NombreA;
     // End of variables declaration//GEN-END:variables
 
-    private void limpiador() {
-        tf_CiudadN.setText("");
-        tf_BarrioN.setText("");
-    }
 }
