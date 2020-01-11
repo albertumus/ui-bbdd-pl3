@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -104,6 +105,7 @@ public class E_Oferta extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_ExitActionPerformed
 
+    @SuppressWarnings ({"null", "UseSpecificCatch"})
     private void btn_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DeleteActionPerformed
         // TODO add your handling code here:
         Statement s = null;
@@ -118,8 +120,8 @@ public class E_Oferta extends javax.swing.JFrame {
         try {
             //if(tf_Nombre.equals(""))
             s.executeUpdate("DELETE FROM oferta WHERE id_oferta = '"+cb_TS.getItemAt(cb_TS.getSelectedIndex())+"'");
-        } catch (SQLException ex) {
-            Logger.getLogger(E_Oferta.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         rellenaCB();
     }//GEN-LAST:event_btn_DeleteActionPerformed
@@ -160,6 +162,7 @@ public class E_Oferta extends javax.swing.JFrame {
         });
     }
 
+    @SuppressWarnings({"UseSpecificCatch", "null"})
     private void rellenaCB() {
         cb_TS.removeAllItems();
         ResultSet rs = null;
@@ -167,16 +170,16 @@ public class E_Oferta extends javax.swing.JFrame {
         //Creamos la query
         try {
             s = conexion.createStatement();
-        } catch (SQLException se) {
-            System.out.println("probando conexion de consulta");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         try {
             rs = s.executeQuery("SELECT * FROM oferta");
             while (rs.next()) {
                 cb_TS.addItem(rs.getString(1));
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(M_Tienda.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
 
     }

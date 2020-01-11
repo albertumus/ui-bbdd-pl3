@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -104,6 +105,7 @@ public class E_Cupon extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_ExitActionPerformed
 
+    @SuppressWarnings("null")
     private void btn_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DeleteActionPerformed
         // TODO add your handling code here:
         Statement s = null;
@@ -111,15 +113,15 @@ public class E_Cupon extends javax.swing.JFrame {
         System.out.println(this.getTitle());
         try {
             s = conexion.createStatement();
-        } catch (SQLException se) {
-            System.out.println("probando conexion de consulta");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
 
         try {
             //if(tf_Nombre.equals(""))
             s.executeUpdate("DELETE FROM cupon WHERE id_cupon = '"+cb_TS.getItemAt(cb_TS.getSelectedIndex())+"'");
-        } catch (SQLException ex) {
-            Logger.getLogger(E_Cupon.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         rellenaCB();
     }//GEN-LAST:event_btn_DeleteActionPerformed
@@ -154,12 +156,14 @@ public class E_Cupon extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new E_Cupon(conexion).setVisible(true);
             }
         });
     }
 
+    @SuppressWarnings("null")
     private void rellenaCB() {
         cb_TS.removeAllItems();
         ResultSet rs = null;
@@ -175,8 +179,8 @@ public class E_Cupon extends javax.swing.JFrame {
             while (rs.next()) {
                 cb_TS.addItem(rs.getString(1));
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(M_Tienda.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
 
     }
