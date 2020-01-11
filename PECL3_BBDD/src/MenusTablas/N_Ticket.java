@@ -43,16 +43,28 @@ public final class N_Ticket extends javax.swing.JFrame {
         tf_IDA = new javax.swing.JTextField();
         btn_Modify = new javax.swing.JButton();
         btn_Exit = new javax.swing.JButton();
-        lbl_Fecha1 = new javax.swing.JLabel();
-        lbl_Hora1 = new javax.swing.JLabel();
         lbl_nSocio2 = new javax.swing.JLabel();
         lbl_nSocio3 = new javax.swing.JLabel();
-        tf_FechaN = new javax.swing.JTextField();
-        tf_HoraN = new javax.swing.JTextField();
         cb_NSocioN = new javax.swing.JComboBox<>();
         cb_TrabajadorN = new javax.swing.JComboBox<>();
         lbl_nSocio4 = new javax.swing.JLabel();
         tf_TotalN = new javax.swing.JTextField();
+        p_Hora = new javax.swing.JPanel();
+        tf_HoraH = new javax.swing.JTextField();
+        tf_HoraM = new javax.swing.JTextField();
+        tf_HoraS = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lbl_Hora1 = new javax.swing.JLabel();
+        p_Hora1 = new javax.swing.JPanel();
+        tf_FechaD = new javax.swing.JTextField();
+        tf_FechaM = new javax.swing.JTextField();
+        tf_FechaA = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lbl_Hora2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -76,10 +88,6 @@ public final class N_Ticket extends javax.swing.JFrame {
             }
         });
 
-        lbl_Fecha1.setText("Fecha:");
-
-        lbl_Hora1.setText("Hora:");
-
         lbl_nSocio2.setText("Numero Socio:");
 
         lbl_nSocio3.setText("Trabajador:");
@@ -91,69 +99,148 @@ public final class N_Ticket extends javax.swing.JFrame {
         tf_TotalN.setEditable(false);
         tf_TotalN.setText("0");
 
+        jLabel1.setText("Hora:");
+
+        jLabel2.setText("Minuto:");
+
+        jLabel3.setText("Segundo:");
+
+        lbl_Hora1.setText("Hora:");
+
+        javax.swing.GroupLayout p_HoraLayout = new javax.swing.GroupLayout(p_Hora);
+        p_Hora.setLayout(p_HoraLayout);
+        p_HoraLayout.setHorizontalGroup(
+            p_HoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_HoraLayout.createSequentialGroup()
+                .addComponent(lbl_Hora1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(p_HoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_HoraH, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p_HoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p_HoraLayout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(p_HoraLayout.createSequentialGroup()
+                        .addComponent(tf_HoraM, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_HoraS, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+        p_HoraLayout.setVerticalGroup(
+            p_HoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_HoraLayout.createSequentialGroup()
+                .addGroup(p_HoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p_HoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_Hora1)
+                    .addComponent(tf_HoraH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_HoraM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_HoraS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jLabel4.setText("Dia:");
+
+        jLabel5.setText("Mes:");
+
+        jLabel6.setText("Año:");
+
+        lbl_Hora2.setText("Fecha:");
+
+        javax.swing.GroupLayout p_Hora1Layout = new javax.swing.GroupLayout(p_Hora1);
+        p_Hora1.setLayout(p_Hora1Layout);
+        p_Hora1Layout.setHorizontalGroup(
+            p_Hora1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_Hora1Layout.createSequentialGroup()
+                .addComponent(lbl_Hora2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(p_Hora1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_FechaD, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p_Hora1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p_Hora1Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(p_Hora1Layout.createSequentialGroup()
+                        .addComponent(tf_FechaM, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_FechaA, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        p_Hora1Layout.setVerticalGroup(
+            p_Hora1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_Hora1Layout.createSequentialGroup()
+                .addGroup(p_Hora1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p_Hora1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_Hora2)
+                    .addComponent(tf_FechaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_FechaM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_FechaA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_Modify, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(btn_Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_Modify, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(lbl_nSocio4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lbl_nSocio3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lbl_nSocio2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(cb_TrabajadorN, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tf_TotalN, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cb_NSocioN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(p_Hora1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lbl_Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(tf_FechaN, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(lbl_nSocio4, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                                .addGap(18, 18, 18))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(lbl_Hora1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGap(18, 18, 18)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tf_HoraN, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tf_TotalN, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addComponent(cb_NSocioN, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lbl_Info)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lbl_id, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(tf_IDA, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(lbl_nSocio3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lbl_nSocio2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addComponent(cb_TrabajadorN, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(tf_IDA)
+                                .addGap(9, 9, 9))
+                            .addComponent(p_Hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(lbl_Info, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_id)
                     .addComponent(tf_IDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Fecha1)
-                    .addComponent(tf_FechaN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Hora1)
-                    .addComponent(tf_HoraN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(p_Hora1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(p_Hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_nSocio2)
                     .addComponent(cb_NSocioN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -166,13 +253,13 @@ public final class N_Ticket extends javax.swing.JFrame {
                     .addComponent(lbl_nSocio4)
                     .addComponent(tf_TotalN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_Modify)
-                    .addComponent(btn_Exit))
-                .addGap(47, 47, 47))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_Exit)
+                    .addComponent(btn_Modify))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(379, 324));
+        setSize(new java.awt.Dimension(379, 371));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -245,20 +332,24 @@ public final class N_Ticket extends javax.swing.JFrame {
         if (cb_NSocioN.getSelectedIndex() != 0) {
             numeroSocio = cb_NSocioN.getSelectedItem().toString();
         }
-        //Creamos la query
-        try {
-            s = conexion.createStatement();
-        } catch (SQLException se) {
-            System.out.println("probando conexion de consulta");
-        }
-        try {
+        if (comprobarHora() && comprobarFecha()) {
+            String fecha = setFecha();
+            String hora = setHora();
+            //Creamos la query
+            try {
+                s = conexion.createStatement();
+            } catch (SQLException se) {
+                System.out.println("probando conexion de consulta");
+            }
+            try {
 
-            //INSERT INTO public.ticket (id_ticket, fecha, hora, numero_socio, dni_trabajador_cajero, total) VALUES (2, '2019-08-17', '20:38:59', 79, '16051022G', 233);
-            s.executeUpdate("INSERT INTO public.ticket (id_ticket, fecha, hora, numero_socio, dni_trabajador_cajero, total) VALUES ('" + tf_IDA.getText() + "',"
-                    + " '" + tf_FechaN.getText() + "', '" + tf_HoraN.getText() + "', " + numeroSocio + ", '" + cb_TrabajadorN.getItemAt(cb_TrabajadorN.getSelectedIndex()) + "', 0)");
-            confirmacion();
-        } catch (SQLException ex) {
-            Logger.getLogger(N_Ticket.class.getName()).log(Level.SEVERE, null, ex);
+                //INSERT INTO public.ticket (id_ticket, fecha, hora, numero_socio, dni_trabajador_cajero, total) VALUES (2, '2019-08-17', '20:38:59', 79, '16051022G', 233);
+                s.executeUpdate("INSERT INTO public.ticket (id_ticket, fecha, hora, numero_socio, dni_trabajador_cajero, total) VALUES ('" + tf_IDA.getText() + "',"
+                        + " '" + fecha + "', '" + hora + "', " + numeroSocio + ", '" + cb_TrabajadorN.getItemAt(cb_TrabajadorN.getSelectedIndex()) + "', 0)");
+                confirmacion();
+            } catch (SQLException ex) {
+                Logger.getLogger(N_Ticket.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -330,20 +421,82 @@ public final class N_Ticket extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Comprueba si un String es un numero
+     *
+     * @param num
+     * @param Longitud
+     * @return false si no lo es | true si lo es
+     */
+    @SuppressWarnings("UseSpecificCatch")
+    private boolean comprobarNumero(String num, int Longitud) {
+        boolean r = false;
+        try {
+            Integer.valueOf(num);
+            r = true;
+        } catch (Exception e) {
+            r = false;
+        }
+        if (num.length() != Longitud) {
+            r = false;
+        }
+        return r;
+    }
+
+    private boolean comprobarFecha() {
+        boolean s = false;
+        if (comprobarNumero(tf_FechaA.getText(), 4) || comprobarNumero(tf_FechaM.getText(), 2) || comprobarNumero(tf_FechaD.getText(), 2)) {
+            if (Integer.valueOf(tf_FechaM.getText()) < 13 && Integer.valueOf(tf_FechaM.getText()) > 0 && Integer.valueOf(tf_FechaD.getText()) > 0 && Integer.valueOf(tf_FechaD.getText()) < 31) {
+                s = true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Error en el campo Fecha, porfavor inserte datos correctos", "Error en Campo", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Error en el campo Fecha, porfavor inserte datos correctos", "Error en Campo", JOptionPane.ERROR_MESSAGE);
+        }
+        return s;
+    }
+
+    private boolean comprobarHora() {
+        boolean s = false;
+        if (comprobarNumero(tf_HoraH.getText(), 2) || comprobarNumero(tf_HoraM.getText(), 2) || comprobarNumero(tf_HoraS.getText(), 2)) {
+            if (Integer.valueOf(tf_HoraH.getText()) < 25 && Integer.valueOf(tf_HoraH.getText()) > 0 && Integer.valueOf(tf_HoraM.getText()) > 0 && Integer.valueOf(tf_HoraH.getText()) < 61 && Integer.valueOf(tf_HoraS.getText()) > 0 && Integer.valueOf(tf_HoraS.getText()) < 61) {
+                s = true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Error en el campo Hora, porfavor inserte datos correctos", "Error en Campo", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Error en el campo Hora, porfavor inserte datos correctos", "Error en Campo", JOptionPane.ERROR_MESSAGE);
+        }
+        return s;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Exit;
     private javax.swing.JButton btn_Modify;
     private javax.swing.JComboBox<String> cb_NSocioN;
     private javax.swing.JComboBox<String> cb_TrabajadorN;
-    private javax.swing.JLabel lbl_Fecha1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel lbl_Hora1;
+    private javax.swing.JLabel lbl_Hora2;
     private javax.swing.JLabel lbl_Info;
     private javax.swing.JLabel lbl_id;
     private javax.swing.JLabel lbl_nSocio2;
     private javax.swing.JLabel lbl_nSocio3;
     private javax.swing.JLabel lbl_nSocio4;
-    private javax.swing.JTextField tf_FechaN;
-    private javax.swing.JTextField tf_HoraN;
+    private javax.swing.JPanel p_Hora;
+    private javax.swing.JPanel p_Hora1;
+    private javax.swing.JTextField tf_FechaA;
+    private javax.swing.JTextField tf_FechaD;
+    private javax.swing.JTextField tf_FechaM;
+    private javax.swing.JTextField tf_HoraH;
+    private javax.swing.JTextField tf_HoraM;
+    private javax.swing.JTextField tf_HoraS;
     private javax.swing.JTextField tf_IDA;
     private javax.swing.JTextField tf_TotalN;
     // End of variables declaration//GEN-END:variables
@@ -355,7 +508,7 @@ public final class N_Ticket extends javax.swing.JFrame {
                 "Añadir Productos",
                 JOptionPane.YES_NO_OPTION);
         if (n == JOptionPane.YES_OPTION) {
-            N_Productos_Cupon ventana = new N_Productos_Cupon(tf_IDA.getText(),conexion);
+            N_Productos_Cupon ventana = new N_Productos_Cupon(tf_IDA.getText(), conexion);
             ventana.setVisible(true);
             this.setVisible(false);
             //Abrir nueva ventana para insertar Ticket en cupon
@@ -363,6 +516,14 @@ public final class N_Ticket extends javax.swing.JFrame {
             //JOptionPane.showMessageDialog(null, "GOODBYE");
             this.setVisible(false);
         }
+    }
+
+    private String setFecha() {
+        return tf_FechaA.getText() + "-" + tf_FechaM.getText() + "-" + tf_FechaD.getText();
+    }
+
+    private String setHora() {
+        return tf_HoraH.getText() + ":" + tf_HoraM.getText() + ":" + tf_HoraS.getText();
     }
 
 }

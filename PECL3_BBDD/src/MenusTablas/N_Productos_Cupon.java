@@ -146,7 +146,6 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
                     } catch (SQLException se) {
                         System.out.println("probando conexion de consulta");
                     }
-
                     try {
                         //if(tf_Nombre.equals(""))
                         s.executeUpdate("INSERT INTO public.productos_comprados (codigo_producto,id_ticket_ticket,cantidad) VALUES ('" + cb_Producto.getItemAt(cb_Producto.getSelectedIndex())

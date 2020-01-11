@@ -251,8 +251,8 @@ public final class N_Trabajador extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se pueden introducir campos vacios", "ERROR", JOptionPane.ERROR_MESSAGE);
         } else {
 
-            NT = comprobarNumero(tf_Telefono.getText());
-            NM = comprobarNumero(tf_Movil.getText());
+            NT = comprobarNumero(tf_Telefono.getText(),9);
+            NM = comprobarNumero(tf_Movil.getText(),9);
             System.out.println(NT + " | " + NM);
 
             if (NT == false || NM == false) {
@@ -309,12 +309,12 @@ public final class N_Trabajador extends javax.swing.JFrame {
 
     /**
      * Comprueba si un String es un numero
-     *
      * @param num
+     * @param Longitud
      * @return false si no lo es | true si lo es
      */
     @SuppressWarnings("UseSpecificCatch")
-    private boolean comprobarNumero(String num) {
+    private boolean comprobarNumero(String num, int Longitud) {
         boolean r = false;
         try {
             Integer.valueOf(num);
@@ -322,12 +322,12 @@ public final class N_Trabajador extends javax.swing.JFrame {
         } catch (Exception e) {
             r = false;
         }
-        if (num.length() != 9) {
+        if (num.length() != Longitud) {
             r = false;
         }
         return r;
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Exit;
     private javax.swing.JButton btn_Modify;
