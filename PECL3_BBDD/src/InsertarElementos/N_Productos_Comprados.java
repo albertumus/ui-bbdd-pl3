@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  *
  * @author razvanvc
  */
-public class N_Productos_Cupon extends javax.swing.JFrame {
+public class N_Productos_Comprados extends javax.swing.JFrame {
 
     public static String NTicket;
     public static Connection conexion;
@@ -27,9 +27,9 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
      * @param NTicket Numero del Ticket
      * @param c Conexion con la BD
      */
-    public N_Productos_Cupon(String NTicket, Connection c) {
-        N_Productos_Cupon.NTicket = NTicket;
-        N_Productos_Cupon.conexion = c;
+    public N_Productos_Comprados(String NTicket, Connection c) {
+        N_Productos_Comprados.NTicket = NTicket;
+        N_Productos_Comprados.conexion = c;
         initComponents();
         tf_Ticket.setText(NTicket);
         rellenarCBProducto();
@@ -158,7 +158,7 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
                     }
                     try {
                         //if(tf_Nombre.equals(""))
-                        s.executeUpdate("INSERT INTO public.productos_comprados (codigo_producto,id_ticket_ticket,cantidad) VALUES ('" + cb_Producto.getItemAt(cb_Producto.getSelectedIndex())
+                        s.executeUpdate("INSERT INTO public.producto_cupon (codigo_producto,id_ticket_ticket,cantidad) VALUES ('" + cb_Producto.getItemAt(cb_Producto.getSelectedIndex())
                                 + "','" + tf_Ticket.getText() + "','" + tf_Cantidad.getText() + "')");
                         JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
                         confirmacion("¿Deseas añadir mas productos?","Añadir Productos");
@@ -191,8 +191,9 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(N_Productos_Cupon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(N_Productos_Comprados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
         
         //</editor-fold>
@@ -201,7 +202,7 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @SuppressWarnings("override")
             public void run() {
-                new N_Productos_Cupon(NTicket, conexion).setVisible(true);
+                new N_Productos_Comprados(NTicket, conexion).setVisible(true);
             }
         });
     }
@@ -236,7 +237,7 @@ public class N_Productos_Cupon extends javax.swing.JFrame {
                 T,
                 JOptionPane.YES_NO_OPTION);
         if (n == JOptionPane.YES_OPTION) {
-            N_Productos_Cupon ventana = new N_Productos_Cupon(tf_Ticket.getText(), conexion);
+            N_Productos_Comprados ventana = new N_Productos_Comprados(tf_Ticket.getText(), conexion);
             ventana.setVisible(true);
             this.setVisible(false);
             //Abrir nueva ventana para insertar Ticket en cupon

@@ -9,6 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -162,20 +163,36 @@ public final class M_Cupon extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Cambia los campos segun la opinion seleccionada
+     *
+     * @param evt
+     */
     private void cb_TSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_TSActionPerformed
         // TODO add your handling code here:
         rellenaDatos();
     }//GEN-LAST:event_cb_TSActionPerformed
 
+    /**
+     * Sale de esta ventana sin conservar los cambios
+     *
+     * @param evt
+     */
     private void btn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExitActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btn_ExitActionPerformed
 
+    /**
+     * Comprueba y Modifica los datos de Cupon en la BD
+     *
+     * @param evt
+     */
     private void btn_ModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModifyActionPerformed
         // TODO add your handling code here:
-        modificarDatos();
-        rellenaDatos();
+        if (comprobarDatos()) {
+            modificarDatos();
+        }
     }//GEN-LAST:event_btn_ModifyActionPerformed
 
     /**
@@ -216,7 +233,24 @@ public final class M_Cupon extends javax.swing.JFrame {
         });
     }
 
-    private void modificarDatos(){
+    /**
+     * Comprueba que todos los datos esten en el formato adecuado
+     *
+     * @return true si lo estan | false si no lo estan
+     */
+    private boolean comprobarDatos() {
+        boolean s = false;
+        if (comprobarNumero(tf_DescuentoN.getText())) {
+            s = true;
+        }
+        return s;
+    }
+
+    /**
+     * Modifica los datos de la BD
+     */
+    @SuppressWarnings({"null", "UseSpecificCatch"})
+    private void modificarDatos() {
 
         Statement s = null;
         //Creamos la query
@@ -227,17 +261,18 @@ public final class M_Cupon extends javax.swing.JFrame {
         }
         try {
             //UPDATE cupon SET descuento = 20 WHERE  id_cupon = 1;
-            s.executeUpdate("UPDATE cupon SET descuento = '"+tf_DescuentoN.getText()+"' WHERE id_cupon = '"+cb_TS.getItemAt(cb_TS.getSelectedIndex())+"'");
-//            while (rs.next()) {
-//                tf_NombreA.setText(rs.getString(1));
-//                tf_CiudadA.setText(rs.getString(2));
-//                tf_BarrioA.setText(rs.getString(3));
-//            }
-        } catch (SQLException ex) {
-            Logger.getLogger(M_Cupon.class.getName()).log(Level.SEVERE, null, ex);
+            s.executeUpdate("UPDATE cupon SET descuento = '" + tf_DescuentoN.getText() + "' WHERE id_cupon = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
+            JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            confirmacion("¿Deseas modificar los productos que afectan a la oferta?", "Modificar Cupon");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
+    /**
+     * Rellena los datos de los diferentes campos con los datos de la BD
+     */
+    @SuppressWarnings("null")
     private void rellenaDatos() {
         ResultSet rs = null;
         Statement s = null;
@@ -258,6 +293,10 @@ public final class M_Cupon extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Rellena el CB_TS con los Cupones de la BD
+     */
+    @SuppressWarnings("null")
     private void rellenaCB() {
         cb_TS.removeAllItems();
         ResultSet rs = null;
@@ -278,6 +317,74 @@ public final class M_Cupon extends javax.swing.JFrame {
         }
 
     }
+
+    /**
+     * Comprueba si un String es un numero y si es menor que una longitud
+     *
+     * @param num String que se desea comprobar si es un numero
+     * @param Longitud Longitud especificada del numero
+     * @return false si no lo es | true si lo es
+     */
+    @SuppressWarnings("UseSpecificCatch")
+    private boolean comprobarNumero(String num) {
+        boolean r = false;
+        try {
+            int Check = Integer.valueOf(num);
+            System.out.println(Check);
+            if (Check >= 0 && Check <= 100) {
+                r = true;
+            }
+        } catch (Exception e) {
+            r = false;
+        }
+        return r;
+    }
+
+    /**
+     * Crea un JOptionPane que te hace una pregunta segun P
+     *
+     * @param P Pregunta que aparece en el JOptionPane
+     * @param T Titulo del JOptionPane
+     */
+    private void confirmacion(String P, String T) {
+        int n = JOptionPane.showConfirmDialog(
+                null,
+                P,
+                T,
+                JOptionPane.YES_NO_OPTION);
+        if (n == JOptionPane.YES_OPTION) {
+            N_Productos_Cupon ventana = new N_Productos_Cupon(tf_IDA.getText(), conexion);
+            ventana.setVisible(true);
+            this.setVisible(false);
+            //Abrir nueva ventana para insertar Ticket en cupon
+        } else {
+            confirmacion2("¿Deseas modificar algun cupon mas?", "Modificar Cupon");
+            this.setVisible(false);
+        }
+    }
+
+    /**
+     * Crea un JOptionPane que te hace una pregunta segun P
+     *
+     * @param P Pregunta que aparece en el JOptionPane
+     * @param T Titulo del JOptionPane
+     */
+    private void confirmacion2(String P, String T) {
+        int n = JOptionPane.showConfirmDialog(
+                null,
+                P,
+                T,
+                JOptionPane.YES_NO_OPTION);
+        if (n == JOptionPane.YES_OPTION) {
+            M_Cupon ventana = new M_Cupon(conexion);
+            ventana.setVisible(true);
+            this.setVisible(false);
+            //Abrir nueva ventana para insertar Ticket en cupon
+        } else {
+            this.setVisible(false);
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Exit;
     private javax.swing.JButton btn_Modify;
