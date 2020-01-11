@@ -99,24 +99,40 @@ public static Connection conexion;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Crea una nueva ventana N_Cupon
+     * @param evt 
+     */
     private void btn_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevoActionPerformed
         // TODO add your handling code here:
         N_Cupon ventana = new N_Cupon(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_NuevoActionPerformed
 
+    /**
+     * Crea una nueva ventana M_Cupon
+     * @param evt 
+     */
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
         M_Cupon ventana = new M_Cupon(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
+    /**
+     * Crea una nueva ventana E_Cupon
+     * @param evt 
+     */
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
         E_Cupon ventana = new E_Cupon(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_EliminarActionPerformed
 
+    /**
+     * Crea una nueva ventana Ver_Cupon
+     * @param evt 
+     */
     private void btn_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerActionPerformed
         // TODO add your handling code here:
         Ver_Cupon ventana = new Ver_Cupon(conexion);
@@ -139,20 +155,18 @@ public static Connection conexion;
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cupon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cupon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cupon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Cupon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+    //</editor-fold>
+    //</editor-fold>
+    
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @SuppressWarnings("override")
             public void run() {
                 new Cupon(conexion).setVisible(true);
             }
