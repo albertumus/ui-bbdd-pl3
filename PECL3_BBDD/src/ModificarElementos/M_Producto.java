@@ -58,6 +58,7 @@ public final class M_Producto extends javax.swing.JFrame {
         tf_StockN = new javax.swing.JTextField(4);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Modificar Producto");
 
         cb_TS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

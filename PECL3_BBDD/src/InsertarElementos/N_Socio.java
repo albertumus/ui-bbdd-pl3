@@ -56,6 +56,7 @@ public final class N_Socio extends javax.swing.JFrame {
         tf_SaldoA = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nuevo Socio");
 
         lbl_Info.setText("Seleccione una opinion de la lista:");
 

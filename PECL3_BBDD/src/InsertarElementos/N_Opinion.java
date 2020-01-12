@@ -70,6 +70,7 @@ public final class N_Opinion extends javax.swing.JFrame {
         lbl_Hora3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nueva Opinion");
 
         lbl_Info.setText("Rellene los siguientes campos:");
 

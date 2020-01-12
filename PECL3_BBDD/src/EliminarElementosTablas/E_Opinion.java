@@ -128,6 +128,8 @@ public class E_Opinion extends javax.swing.JFrame {
         try {
             //if(tf_Nombre.equals(""))
             s.executeUpdate("DELETE FROM opinion WHERE id_opinion = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
+            JOptionPane.showMessageDialog(null, "Eliminado Correctamente", "Exito", JOptionPane.ERROR_MESSAGE);
+            confirmacion("¿Desea eliminar mas opiniones?", "Eliminar Opinion");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
@@ -190,7 +192,7 @@ public class E_Opinion extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        confirmacion("¿Desea eliminar mas opiniones?", "Eliminar Opinion");
+        
     }
 
     /**

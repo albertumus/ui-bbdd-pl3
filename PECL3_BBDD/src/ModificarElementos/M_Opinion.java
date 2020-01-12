@@ -84,6 +84,7 @@ public final class M_Opinion extends javax.swing.JFrame {
         lbl_Hora4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Modificar Opinion");
 
         cb_TS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
