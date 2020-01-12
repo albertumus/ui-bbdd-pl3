@@ -210,7 +210,7 @@ public class E_Trabajador extends javax.swing.JFrame {
                 T,
                 JOptionPane.YES_NO_OPTION);
         if (n == JOptionPane.YES_OPTION) {
-            E_Oferta ventana = new E_Oferta(conexion);
+            E_Trabajador ventana = new E_Trabajador(conexion);
             ventana.setVisible(true);
             this.setVisible(false);
             //Abrir nueva ventana para insertar Ticket en cupon
