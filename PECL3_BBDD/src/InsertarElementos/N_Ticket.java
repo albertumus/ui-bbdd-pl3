@@ -467,7 +467,7 @@ public final class N_Ticket extends javax.swing.JFrame {
         } catch (Exception e) {
             r = false;
         }
-        if (num.length() != Longitud) {
+        if (num.length() > Longitud) {
             r = false;
         }
         return r;
