@@ -65,6 +65,7 @@ public final class M_Ticket extends javax.swing.JFrame {
         tf_TotalN = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Modificar Ticket");
 
         cb_TS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

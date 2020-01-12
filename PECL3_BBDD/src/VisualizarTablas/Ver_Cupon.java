@@ -31,7 +31,9 @@ public class Ver_Cupon extends javax.swing.JFrame {
         model = (DefaultTableModel) tbl_Resultado.getModel();
         model.setColumnCount(0);
         model.setRowCount(0);
+        tbl_Resultado.setEnabled(false);
         mostrar();
+        
     }
 
     /**
@@ -110,7 +112,7 @@ public class Ver_Cupon extends javax.swing.JFrame {
 
     private void btn_CerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CerrarActionPerformed
         // TODO add your handling code here:
-        this.hide();
+        this.setVisible(false);
     }//GEN-LAST:event_btn_CerrarActionPerformed
 
     private void btn_ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ActualizarActionPerformed

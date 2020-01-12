@@ -31,6 +31,7 @@ public class Ver_Tienda extends javax.swing.JFrame {
         model = (DefaultTableModel) tbl_Resultado.getModel();
         model.setColumnCount(0);
         model.setRowCount(0);
+        tbl_Resultado.setEnabled(false);
         mostrar();
     }
 

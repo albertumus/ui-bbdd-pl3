@@ -6,11 +6,9 @@
 package MenusTablas;
 
 import java.sql.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -203,20 +201,36 @@ public final class M_Producto extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Cambia los campos segun la opinion seleccionada
+     *
+     * @param evt
+     */
     private void cb_TSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_TSActionPerformed
         // TODO add your handling code here:
         rellenaDatos();
     }//GEN-LAST:event_cb_TSActionPerformed
 
+    /**
+     * Sale de esta ventana sin conservar los cambios
+     *
+     * @param evt
+     */
     private void btn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExitActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btn_ExitActionPerformed
 
+    /**
+     * Comprueba y Modifica los datos de Cupon en la BD
+     *
+     * @param evt
+     */
     private void btn_ModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModifyActionPerformed
         // TODO add your handling code here:
-        modificarDatos();
-        rellenaDatos();
+        if (comprobarDatos()) {
+            modificarDatos();
+        }
     }//GEN-LAST:event_btn_ModifyActionPerformed
 
     /**
@@ -235,15 +249,26 @@ public final class M_Producto extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(M_Producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(M_Producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(M_Producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(M_Producto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -263,12 +288,30 @@ public final class M_Producto extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @SuppressWarnings("override")
             public void run() {
                 new M_Producto(conexion).setVisible(true);
             }
         });
     }
 
+    /**
+     * Comprueba que todos los datos esten en el formato adecuado
+     *
+     * @return true si lo estan | false si no lo estan
+     */
+    private boolean comprobarDatos() {
+        boolean s = false;
+        if (comprobarNumeroDouble(tf_PrecioN.getText()) && comprobarNumero(tf_StockN.getText())) {
+            s = true;
+        }
+        return s;
+    }
+
+    /**
+     * Modifica los datos de la BD
+     */
+    @SuppressWarnings({"null", "UseSpecificCatch"})
     private void modificarDatos() {
 
         Statement s = null;
@@ -282,16 +325,17 @@ public final class M_Producto extends javax.swing.JFrame {
             //UPDATE cupon SET descuento = 20 WHERE  id_cupon = 1;
             //UPDATE oferta SET descuento = 3, fecha_inicio = '2019-09-09', fecha_fin = '2019-09-16'  WHERE  id_oferta = 1;
             s.executeUpdate("UPDATE producto SET precio = '" + tf_PrecioN.getText() + "', precio_IVA = '" + tf_PrecioIVAN.getText() + "', stock = '" + tf_StockN.getText() + "'  WHERE codigo = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
-//            while (rs.next()) {
-//                tf_NombreA.setText(rs.getString(1));
-//                tf_CiudadA.setText(rs.getString(2));
-//                tf_BarrioA.setText(rs.getString(3));
-//            }
-        } catch (SQLException ex) {
-            Logger.getLogger(M_Producto.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            confirmacion("¿Deseas modificar mas productos?", "Modificar Producto");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }
 
+    /**
+     * Rellena los datos de los diferentes campos con los datos de la BD
+     */
+    @SuppressWarnings("null")
     private void rellenaDatos() {
         ResultSet rs = null;
         Statement s = null;
@@ -314,6 +358,10 @@ public final class M_Producto extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Rellena el CB_TS con los Cupones de la BD
+     */
+    @SuppressWarnings("null")
     private void rellenaCB() {
         cb_TS.removeAllItems();
         ResultSet rs = null;
@@ -333,6 +381,69 @@ public final class M_Producto extends javax.swing.JFrame {
             Logger.getLogger(M_Producto.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+    
+    /**
+     * Comprueba si un String es un numero y si es menor que una longitud
+     *
+     * @param num String que se desea comprobar si es un numero
+     * @return false si no lo es | true si lo es
+     */
+    @SuppressWarnings("UseSpecificCatch")
+    private boolean comprobarNumero(String num) {
+        boolean r = false;
+        try {
+            int Check = Integer.valueOf(num);
+            System.out.println(Check);
+            if (Check >= 0) {
+                r = true;
+            }
+        } catch (Exception e) {
+            r = false;
+        }
+        return r;
+    }
+
+    /**
+     * Comprueba si un String es un numero y si es menor que una longitud
+     *
+     * @param num String que se desea comprobar si es un numero
+     * @return false si no lo es | true si lo es
+     */
+    @SuppressWarnings("UseSpecificCatch")
+    private boolean comprobarNumeroDouble(String num) {
+        boolean r = false;
+        try {
+            Double Check = Double.valueOf(num);
+            System.out.println(Check);
+            if (Check >= 0) {
+                r = true;
+            }
+        } catch (Exception e) {
+            r = false;
+        }
+        return r;
+    }
+    /**
+     * Crea un JOptionPane que te hace una pregunta segun P
+     *
+     * @param P Pregunta que aparece en el JOptionPane
+     * @param T Titulo del JOptionPane
+     */
+    private void confirmacion(String P, String T) {
+        int n = JOptionPane.showConfirmDialog(
+                null,
+                P,
+                T,
+                JOptionPane.YES_NO_OPTION);
+        if (n == JOptionPane.YES_OPTION) {
+            M_Producto ventana = new M_Producto(conexion);
+            ventana.setVisible(true);
+            this.setVisible(false);
+            //Abrir nueva ventana para insertar Ticket en cupon
+        } else {
+            this.setVisible(false);
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Exit;

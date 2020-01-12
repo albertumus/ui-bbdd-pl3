@@ -8,6 +8,7 @@ package MenusTablas;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -282,20 +283,37 @@ public final class M_Trabajador extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Cambia los campos segun la opinion seleccionada
+     *
+     * @param evt
+     */
     private void cb_TSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_TSActionPerformed
         // TODO add your handling code here:
         rellenaDatos();
         rellenarCBTienda();
     }//GEN-LAST:event_cb_TSActionPerformed
 
+    /**
+     * Sale de esta ventana sin conservar los cambios
+     *
+     * @param evt
+     */
     private void btn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExitActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btn_ExitActionPerformed
 
+    /**
+     * Comprueba y Modifica los datos de Cupon en la BD
+     *
+     * @param evt
+     */
     private void btn_ModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModifyActionPerformed
         // TODO add your handling code here:
-        modificarDatos();
+        if (comprobarDatos()) {
+            modificarDatos();
+        }
     }//GEN-LAST:event_btn_ModifyActionPerformed
 
     /**
@@ -314,13 +332,7 @@ public final class M_Trabajador extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(M_Trabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(M_Trabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(M_Trabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(M_Trabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -332,14 +344,51 @@ public final class M_Trabajador extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @SuppressWarnings("override")
             public void run() {
                 new M_Trabajador(conexion).setVisible(true);
             }
         });
     }
 
+    /**
+     * Comprueba que todos los datos esten en el formato adecuado
+     *
+     * @return true si lo estan | false si no lo estan
+     */
+    private boolean comprobarDatos() {
+        boolean s = false;
+        if (tf_NombreN.getText().equals("") || tf_TelefonoN.getText().equals("") || tf_MovilN.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No puede haber campos vacios", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (cb_NMediaN.getSelectedIndex() == 0) {
+                JOptionPane.showMessageDialog(null, "Selecciona una Nota Media", "ERROR", JOptionPane.ERROR_MESSAGE);
+            } else {
+                if (comprobarNumero(tf_TelefonoN.getText(), 9) && comprobarNumero(tf_MovilN.getText(), 9)) {
+                    s = true;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Los campos Telefono y Movil han de ser numericos y tener 9 cifras", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+        return s;
+    }
+
+    /**
+     * Modifica los datos de la BD
+     */
+    @SuppressWarnings({"null", "UseSpecificCatch"})
     private void modificarDatos() {
 
         Statement s = null;
@@ -353,15 +402,19 @@ public final class M_Trabajador extends javax.swing.JFrame {
         }
         try {
             //UPDATE trabajador SET nombre = 'Rogan Gery', telefono = '123456789', movil = 6, turno = false, nombre_tienda = 'Ahorramas', nota_media = 5 WHERE dni = '16590814Y';
-            s.executeUpdate("UPDATE trabajador SET nombre = '"+tf_NombreN.getText()+"', telefono = '"+tf_TelefonoN.getText()+"', "
-                    + "movil = "+tf_MovilN.getText()+", turno = "+turno+", nombre_tienda = '"+cb_NTiendaN.getItemAt(cb_NTiendaN.getSelectedIndex())+"', "
-                            + "nota_media = '"+cb_NMediaN.getItemAt(cb_NMediaN.getSelectedIndex())+"' WHERE dni = '"+cb_TS.getItemAt(cb_TS.getSelectedIndex())+"'");
+            s.executeUpdate("UPDATE trabajador SET nombre = '" + tf_NombreN.getText() + "', telefono = '" + tf_TelefonoN.getText() + "', "
+                    + "movil = " + tf_MovilN.getText() + ", turno = " + turno + ", nombre_tienda = '" + cb_NTiendaN.getItemAt(cb_NTiendaN.getSelectedIndex()) + "', "
+                    + "nota_media = '" + cb_NMediaN.getItemAt(cb_NMediaN.getSelectedIndex()) + "' WHERE dni = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
             System.out.println("Done");
         } catch (SQLException ex) {
             Logger.getLogger(M_Trabajador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+    /**
+     * Rellena los datos de los diferentes campos con los datos de la BD
+     */
+    @SuppressWarnings("null")
     private void rellenaDatos() {
         ResultSet rs = null;
         Statement s = null;
@@ -372,24 +425,28 @@ public final class M_Trabajador extends javax.swing.JFrame {
             System.out.println("probando conexion de consulta");
         }
         try {
-            
-                int id;
-                rs = s.executeQuery("SELECT * FROM trabajador WHERE dni = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex())+"'");
-                while (rs.next()) {
-                    tf_DNI.setText(rs.getString(1));
-                    tf_NombreA.setText(rs.getString(2));
-                    tf_TelefonoA.setText(rs.getString(3));
-                    tf_MovilA.setText(rs.getString(4));
-                    tf_TurnoA.setText(TurnoAntiguo(rs));
-                    tf_NMediaA.setText(rs.getString(7));
-                    tf_NTiendaA.setText(rs.getString(6));
-                }
-            
+
+            int id;
+            rs = s.executeQuery("SELECT * FROM trabajador WHERE dni = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
+            while (rs.next()) {
+                tf_DNI.setText(rs.getString(1));
+                tf_NombreA.setText(rs.getString(2));
+                tf_TelefonoA.setText(rs.getString(3));
+                tf_MovilA.setText(rs.getString(4));
+                tf_TurnoA.setText(TurnoAntiguo(rs));
+                tf_NMediaA.setText(rs.getString(7));
+                tf_NTiendaA.setText(rs.getString(6));
+            }
+
         } catch (SQLException ex) {
             Logger.getLogger(M_Trabajador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+    /**
+     * Rellena el CB_TS con los Trabajadores de la BD
+     */
+    @SuppressWarnings("null")
     private void rellenaCBSelect() {
         cb_TS.removeAllItems();
         ResultSet rs = null;
@@ -411,8 +468,12 @@ public final class M_Trabajador extends javax.swing.JFrame {
         }
 
     }
-    
-    private void rellenarCBTienda(){
+
+    /**
+     * Rellena el CB_NTiendaN con las Tiendas de la BD
+     */
+    @SuppressWarnings("null")
+    private void rellenarCBTienda() {
         cb_NTiendaN.removeAllItems();
         ResultSet rs = null;
         Statement s = null;
@@ -432,27 +493,84 @@ public final class M_Trabajador extends javax.swing.JFrame {
             Logger.getLogger(M_Trabajador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
+    /**
+     * Convierte en texto el numero del cb_TurnoN para insertarlo en la BD
+     *
+     * @return true si el index seleccionado es 0 | false si el index
+     * seleccionado es 1
+     */
     private String TurnoNuevo() {
         String Salida = null;
-        if(cb_TurnoN.getSelectedIndex()==0){
+        if (cb_TurnoN.getSelectedIndex() == 0) {
             Salida = "true";
-        }else{
+        } else {
             Salida = "false";
         }
         return Salida;
     }
-    private String TurnoAntiguo(ResultSet rs) throws SQLException{
+
+    /**
+     * Convierte en texto el turno de la base para insertarlo en el tf_TurnoA
+     *
+     * @return true si el index seleccionado es 0 | false si el index
+     * seleccionado es 1
+     */
+    private String TurnoAntiguo(ResultSet rs) throws SQLException {
         String Salida = null;
-        
-        if(rs.getString(5).equals("f")){
+
+        if (rs.getString(5).equals("f")) {
             Salida = "Mañana";
-        }else{
+        } else {
             Salida = "Tarde";
         }
         return Salida;
     }
-    
+
+    /**
+     * Crea un JOptionPane que te hace una pregunta segun P
+     *
+     * @param P Pregunta que aparece en el JOptionPane
+     * @param T Titulo del JOptionPane
+     */
+    private void confirmacion(String P, String T) {
+        int n = JOptionPane.showConfirmDialog(
+                null,
+                P,
+                T,
+                JOptionPane.YES_NO_OPTION);
+        if (n == JOptionPane.YES_OPTION) {
+            M_Socio ventana = new M_Socio(conexion);
+            ventana.setVisible(true);
+            this.setVisible(false);
+            //Abrir nueva ventana para insertar Ticket en cupon
+        } else {
+            this.setVisible(false);
+        }
+    }
+
+    /**
+     * Comprueba si un String es un numero y si es menor que una longitud
+     *
+     * @param num
+     * @param Longitud
+     * @return false si no lo es | true si lo es
+     */
+    @SuppressWarnings("UseSpecificCatch")
+    private boolean comprobarNumero(String num, int Longitud) {
+        boolean r = false;
+        try {
+            Integer.valueOf(num);
+            r = true;
+        } catch (Exception e) {
+            r = false;
+        }
+        if (num.length() != Longitud) {
+            r = false;
+        }
+        return r;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Exit;
     private javax.swing.JButton btn_Modify;
@@ -487,6 +605,4 @@ public final class M_Trabajador extends javax.swing.JFrame {
     private javax.swing.JTextField tf_TelefonoN;
     private javax.swing.JTextField tf_TurnoA;
     // End of variables declaration//GEN-END:variables
-
-    
 }

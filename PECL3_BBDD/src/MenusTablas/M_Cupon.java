@@ -263,7 +263,7 @@ public final class M_Cupon extends javax.swing.JFrame {
             //UPDATE cupon SET descuento = 20 WHERE  id_cupon = 1;
             s.executeUpdate("UPDATE cupon SET descuento = '" + tf_DescuentoN.getText() + "' WHERE id_cupon = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
             JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
-            confirmacion("¿Deseas modificar los productos que afectan a la oferta?", "Modificar Cupon");
+            confirmacion("¿Deseas modificar los productos que pertenecen al cupon?", "Modificar Cupon");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }

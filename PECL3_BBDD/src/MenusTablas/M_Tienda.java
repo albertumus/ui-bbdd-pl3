@@ -215,30 +215,32 @@ public final class M_Tienda extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(M_Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(M_Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(M_Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(M_Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @SuppressWarnings("override")
             public void run() {
                 new M_Tienda(conexion).setVisible(true);
             }
         });
     }
 
+    /**
+     * Comprueba y Modifica los datos de la BD
+     */
+    @SuppressWarnings({"null", "UseSpecificCatch"})
     private void modificarDatos() {
 
         if (tf_CiudadN.getText().equals("") || tf_BarrioN.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "No se puede insertar una clave vacia", "Error en la Modificacion", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No puede haber campos vacios", "ERROR", JOptionPane.ERROR_MESSAGE);
         } else {
             Statement s = null;
             //Creamos la query
@@ -250,21 +252,19 @@ public final class M_Tienda extends javax.swing.JFrame {
             try {
                 //UPDATE tienda SET ciudad = 'Alcala', barrio = 'El Ensanche' WHERE nombre = 'Ahorramas';
                 s.executeUpdate("UPDATE tienda SET ciudad = '" + tf_CiudadN.getText() + "', barrio = '" + tf_BarrioN.getText() + "' WHERE nombre = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
-                rellenaDatos();
-                limpiador();
-//                JOptionPane.showOptionDialog(null, "¿Desea modificar mas tiendas?", null, WIDTH, HEIGHT, null, null, JOptionPane.INFORMATION_MESSAGE);
-//                if (JOptionPane.NO_OPTION == 1) {
-//                    this.setVisible(false);
-//                } else if(JOptionPane.YES_OPTION == 1){
-//                    this.setVisible(true);
-//                }
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, ex.getMessage(), "Error en la Insercion", JOptionPane.ERROR_MESSAGE);
-                Logger.getLogger(M_Tienda.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                JOptionPane.showMessageDialog(null, "Se ha modificado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            //INCLUIR MODIFICAR LOS CUPONES ASOCIADOS AL SOCIO
+            confirmacion("¿Deseas modificar mas socios?", "Modificar Producto");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
         }
     }
 
+    /**
+     * Rellena los datos de los diferentes campos con los datos de la BD
+     */
+    @SuppressWarnings("null")
     private void rellenaDatos() {
         ResultSet rs = null;
         Statement s = null;
@@ -286,6 +286,10 @@ public final class M_Tienda extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Rellena el CB_TS con las Tiendas de la BD
+     */
+    @SuppressWarnings("null")
     private void rellenaCB() {
         cb_TS.removeAllItems();
         ResultSet rs = null;
@@ -307,9 +311,26 @@ public final class M_Tienda extends javax.swing.JFrame {
 
     }
 
-    private void limpiador() {
-        tf_CiudadN.setText("");
-        tf_BarrioN.setText("");
+    /**
+     * Crea un JOptionPane que te hace una pregunta segun P
+     *
+     * @param P Pregunta que aparece en el JOptionPane
+     * @param T Titulo del JOptionPane
+     */
+    private void confirmacion(String P, String T) {
+        int n = JOptionPane.showConfirmDialog(
+                null,
+                P,
+                T,
+                JOptionPane.YES_NO_OPTION);
+        if (n == JOptionPane.YES_OPTION) {
+            M_Tienda ventana = new M_Tienda(conexion);
+            ventana.setVisible(true);
+            this.setVisible(false);
+            //Abrir nueva ventana para insertar Ticket en cupon
+        } else {
+            this.setVisible(false);
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Exit;

@@ -8,6 +8,7 @@ package MenusTablas;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -70,6 +71,7 @@ public final class M_Socio extends javax.swing.JFrame {
         btn_Copiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Modificar");
 
         cb_TS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,9 +189,8 @@ public final class M_Socio extends javax.swing.JFrame {
                                             .addComponent(tf_TelefonoA, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(tf_MailA, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(tf_DNIA, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(tf_ID)
-                                        .addComponent(tf_NombreA, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE))
+                                    .addComponent(tf_ID, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(tf_NombreA, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(tf_DireccionA, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(tf_SaldoAA, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addGap(60, 60, 60)
@@ -284,21 +285,42 @@ public final class M_Socio extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Cambia los campos segun la opinion seleccionada
+     *
+     * @param evt
+     */
     private void cb_TSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_TSActionPerformed
         // TODO add your handling code here:
         rellenaDatos();
     }//GEN-LAST:event_cb_TSActionPerformed
 
+    /**
+     * Sale de esta ventana sin conservar los cambios
+     *
+     * @param evt
+     */
     private void btn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExitActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btn_ExitActionPerformed
 
+    /**
+     * Comprueba y Modifica los datos de Cupon en la BD
+     *
+     * @param evt
+     */
     private void btn_ModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModifyActionPerformed
         // TODO add your handling code here:
-        modificarDatos();
+        if (comprobarDatos()) {
+            modificarDatos();
+        }
     }//GEN-LAST:event_btn_ModifyActionPerformed
 
+    /**
+     * Copia los parametros de un lado a otro
+     * @param evt 
+     */
     private void btn_CopiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CopiarActionPerformed
         // TODO add your handling code here:
         tf_DNIN.setText(tf_DNIA.getText());
@@ -325,15 +347,26 @@ public final class M_Socio extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(M_Socio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(M_Socio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(M_Socio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(M_Socio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -353,22 +386,41 @@ public final class M_Socio extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @SuppressWarnings("override")
             public void run() {
                 new M_Socio(conexion).setVisible(true);
             }
         });
     }
 
-    private void limpiar() {
-        tf_DNIN.setText("");
-        tf_MailN.setText("");
-        tf_DireccionN.setText("");
-        tf_SaldoAN.setText("");
-        tf_TelefonoN.setText("");
-        tf_NombreN.setText("");
+    /**
+     * Comprueba que todos los datos esten en el formato adecuado
+     *
+     * @return true si lo estan | false si no lo estan
+     */
+    private boolean comprobarDatos() {
+        boolean s = false;
+        if (tf_NombreN.getText().equals("") || tf_DNIN.getText().equals("") || tf_TelefonoN.getText().equals("") || tf_MailN.getText().equals("") || tf_DireccionN.getText().equals("") || tf_SaldoAN.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No puede haber campos vacios", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (comprobarNumeroDouble(tf_SaldoAN.getText()) || comprobarNumero(tf_TelefonoN.getText(), 9)) {
+                if (tf_DNIN.getText().length() != 9) {
+                    JOptionPane.showMessageDialog(null, "El campo DNI ha de tener 9 caracteres", "ERROR", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    s = true;
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Los campos Saldo y Telefono han de ser numericos", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        return s;
     }
-    private void modificarDatos() {
 
+    /**
+     * Modifica los datos de la BD
+     */
+    @SuppressWarnings({"null", "UseSpecificCatch"})
+    private void modificarDatos() {
         Statement s = null;
         //Creamos la query
         try {
@@ -380,16 +432,20 @@ public final class M_Socio extends javax.swing.JFrame {
             //s.executeUpdate("UPDATE socio SET nombre = 'Echo McWayer', dni = '16680718Z', telefono = '680889835', mail = 'rutrum.justo.Praesent@euultricessit.com', direccion = 'P.O. Box 358, 550 Iaculis Ave', saldo_acumulado = 86.26 WHERE numero = 1;");
             //UPDATE socio SET nombre = 'Echo McWayer', dni = '16680718Z', telefono = '680889835', mail = 'rutrum.justo.Praesent@euultricessit.com', direccion = 'P.O. Box 358, 550 Iaculis Ave', saldo_acumulado = 86.26 WHERE numero = 1;
             s.executeUpdate("UPDATE socio SET nombre = '" + tf_NombreN.getText() + "', dni = '" + tf_DNIN.getText() + "',telefono = '" + tf_TelefonoN.getText() + "', "
-                    + "mail = '" + tf_MailN.getText() + "', direccion = '" + tf_DireccionN.getText() + "', saldo_acumulado = '" + Double.valueOf(tf_SaldoAN.getText()) 
+                    + "mail = '" + tf_MailN.getText() + "', direccion = '" + tf_DireccionN.getText() + "', saldo_acumulado = '" + Double.valueOf(tf_SaldoAN.getText())
                     + "' WHERE numero = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
-            System.out.println("Done");
-        } catch (SQLException ex) {
-            Logger.getLogger(M_Socio.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Se ha modificado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            //INCLUIR MODIFICAR LOS CUPONES ASOCIADOS AL SOCIO
+            confirmacion("¿Deseas modificar mas socios?", "Modificar Producto");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        rellenaDatos();
-        limpiar();
     }
 
+    /**
+     * Rellena los datos de los diferentes campos con los datos de la BD
+     */
+    @SuppressWarnings("null")
     private void rellenaDatos() {
         ResultSet rs = null;
         Statement s = null;
@@ -418,6 +474,10 @@ public final class M_Socio extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Rellena el CB_TS con los Socios de la BD
+     */
+    @SuppressWarnings("null")
     private void rellenaCBSelect() {
         cb_TS.removeAllItems();
         ResultSet rs = null;
@@ -440,7 +500,70 @@ public final class M_Socio extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Comprueba si un String es un numero y si es menor que una longitud
+     *
+     * @param num
+     * @param Longitud
+     * @return false si no lo es | true si lo es
+     */
+    @SuppressWarnings("UseSpecificCatch")
+    private boolean comprobarNumero(String num, int Longitud) {
+        boolean r = false;
+        try {
+            Integer.valueOf(num);
+            r = true;
+        } catch (Exception e) {
+            r = false;
+        }
+        if (num.length() != Longitud) {
+            r = false;
+        }
+        return r;
+    }
 
+    /**
+     * Comprueba si un String es un numero y si es menor que una longitud
+     *
+     * @param num String que se desea comprobar si es un numero
+     * @return false si no lo es | true si lo es
+     */
+    @SuppressWarnings("UseSpecificCatch")
+    private boolean comprobarNumeroDouble(String num) {
+        boolean r = false;
+        try {
+            Double Check = Double.valueOf(num);
+            System.out.println(Check);
+            if (Check >= 0) {
+                r = true;
+            }
+        } catch (Exception e) {
+            r = false;
+        }
+        return r;
+    }
+
+    /**
+     * Crea un JOptionPane que te hace una pregunta segun P
+     *
+     * @param P Pregunta que aparece en el JOptionPane
+     * @param T Titulo del JOptionPane
+     */
+    private void confirmacion(String P, String T) {
+        int n = JOptionPane.showConfirmDialog(
+                null,
+                P,
+                T,
+                JOptionPane.YES_NO_OPTION);
+        if (n == JOptionPane.YES_OPTION) {
+            M_Socio ventana = new M_Socio(conexion);
+            ventana.setVisible(true);
+            this.setVisible(false);
+            //Abrir nueva ventana para insertar Ticket en cupon
+        } else {
+            this.setVisible(false);
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Copiar;
     private javax.swing.JButton btn_Exit;
@@ -476,7 +599,4 @@ public final class M_Socio extends javax.swing.JFrame {
     private javax.swing.JTextField tf_TelefonoA;
     private javax.swing.JTextField tf_TelefonoN;
     // End of variables declaration//GEN-END:variables
-
-    
-
 }
