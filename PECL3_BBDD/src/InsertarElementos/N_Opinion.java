@@ -406,10 +406,10 @@ public final class N_Opinion extends javax.swing.JFrame {
             System.out.println("probando conexion de consulta");
         }
         try {
-            rs = s.executeQuery("SELECT * FROM opinion");
+            rs = s.executeQuery("SELECT id_opinion FROM opinion ORDER BY id_opinion");
             while (rs.next()) {
-                id_opinion++;
-
+                rs.getString(1);
+                id_opinion = Integer.getInteger(rs.getString(1))+1;
             }
             tf_ID.setText(Integer.toString(id_opinion));
         } catch (SQLException ex) {
