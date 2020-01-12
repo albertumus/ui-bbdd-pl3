@@ -358,9 +358,9 @@ public final class N_Socio extends javax.swing.JFrame {
         } else {
             if (comprobarNumeroDouble(tf_SaldoA.getText()) || comprobarNumero(tf_Telefono.getText(), 9)) {
                 if (tf_DNI.getText().length() != 9) {
-                    JOptionPane.showMessageDialog(null, "El campo DNI ha de tener 9 caracteres", "ERROR", JOptionPane.ERROR_MESSAGE);
-                } else {
                     s = true;
+                } else {
+                    JOptionPane.showMessageDialog(null, "El campo DNI ha de tener 9 caracteres", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Los campos Saldo y Telefono han de ser numericos", "ERROR", JOptionPane.ERROR_MESSAGE);

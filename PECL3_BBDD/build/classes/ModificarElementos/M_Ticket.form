@@ -205,7 +205,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Info">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Seleccione una opinion de la lista:"/>
+        <Property name="text" type="java.lang.String" value="Seleccione un ticket de la lista:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_id">

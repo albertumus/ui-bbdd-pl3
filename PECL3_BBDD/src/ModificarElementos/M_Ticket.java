@@ -73,7 +73,7 @@ public final class M_Ticket extends javax.swing.JFrame {
             }
         });
 
-        lbl_Info.setText("Seleccione una opinion de la lista:");
+        lbl_Info.setText("Seleccione un ticket de la lista:");
 
         lbl_id.setText("ID:");
 

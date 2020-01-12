@@ -5,7 +5,6 @@
  */
 package VentanasExtra;
 
-import Eliminar.Vista_Cajero;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,6 +19,7 @@ public class Iniciar_Sesion extends javax.swing.JFrame {
     /**
      * Creates new form Iniciar_Sesión
      */
+    @SuppressWarnings("OverridableMethodCallInConstructor")
     public Iniciar_Sesion() {
         initComponents();
         this.setResizable(false);
@@ -113,6 +113,7 @@ public class Iniciar_Sesion extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings({"FinalizeCalledExplicitly", "CallToPrintStackTrace"})
     private void btn_ISActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ISActionPerformed
 
         //Declaracion de Variables
@@ -141,14 +142,10 @@ public class Iniciar_Sesion extends javax.swing.JFrame {
 
         // FASE DOS probar el manejador con su conexion (ojo cambiar usuario y password)
         
-
         try {
             conexion = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:8000/pec3", user, password);
         } catch (SQLException se) {
-            //System.out.println("No se pudo establecer la conexion");
             JOptionPane.showMessageDialog(null, se.getMessage(), "Error de Conexión", JOptionPane.ERROR_MESSAGE);
-            //se.printStackTrace();
-            //System.exit(1);
             tf_User.setText("");
             pf_Password.setText("");
         }
@@ -171,7 +168,6 @@ public class Iniciar_Sesion extends javax.swing.JFrame {
         } catch (Throwable ex) {
             Logger.getLogger(Iniciar_Sesion.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }//GEN-LAST:event_btn_ISActionPerformed
 
     /**
@@ -190,20 +186,18 @@ public class Iniciar_Sesion extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Iniciar_Sesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Iniciar_Sesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Iniciar_Sesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Iniciar_Sesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @SuppressWarnings("override")
             public void run() {
                 new Iniciar_Sesion().setVisible(true);
                 //System.out.println("Frame Iniciado");
