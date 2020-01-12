@@ -295,9 +295,8 @@ public final class N_Socio extends javax.swing.JFrame {
         });
     }
 
-    @SuppressWarnings("null")
+    @SuppressWarnings({"null", "UseSpecificCatch"})
     private void insertarDatos() {
-
         Statement s = null;
         //Creamos la query
         try {
@@ -308,16 +307,12 @@ public final class N_Socio extends javax.swing.JFrame {
         try {
             s.executeUpdate("INSERT INTO socio (numero, nombre, dni, telefono, mail, direccion, saldo_acumulado) VALUES ('" + tf_ID.getText() + "', '"
                     + tf_Nombre.getText() + "', '" + tf_DNI.getText() + "', '" + tf_Telefono.getText() + "', '" + tf_Mail.getText() + "', '" + tf_Direccion.getText() + "', '" + tf_SaldoA.getText() + "')");
-            //UPDATE socio SET nombre = 'Echo McWayer', dni = '16680718Z', telefono = '680889835', mail = 'rutrum.justo.Praesent@euultricessit.com', direccion = 'P.O. Box 358, 550 Iaculis Ave', saldo_acumulado = 86.26 WHERE numero = 1;
-//            s.executeUpdate("UPDATE socio SET nombre = '" + tf_NombreN.getText() + "', dni = '" + tf_DNIN.getText() + "',telefono = '" + tf_TelefonoN.getText() + "', "
-//                    + "mail = '" + tf_MailN.getText() + "', direccion = '" + tf_DireccionN.getText() + "', saldo_acumulado = '" + Double.valueOf(tf_SaldoAN.getText()) 
-//                    + "' WHERE numero = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
-            System.out.println("Done");
-            this.setVisible(false);
-        } catch (SQLException ex) {
-            Logger.getLogger(N_Socio.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Se ha creado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            //INCLUIR MODIFICAR LOS CUPONES ASOCIADOS AL SOCIO
+            confirmacion("¿Deseas crear mas socios?", "Crear Socio");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-
     }
 
     /**
@@ -358,9 +353,9 @@ public final class N_Socio extends javax.swing.JFrame {
         } else {
             if (comprobarNumeroDouble(tf_SaldoA.getText()) || comprobarNumero(tf_Telefono.getText(), 9)) {
                 if (tf_DNI.getText().length() != 9) {
-                    s = true;
-                } else {
                     JOptionPane.showMessageDialog(null, "El campo DNI ha de tener 9 caracteres", "ERROR", JOptionPane.ERROR_MESSAGE);
+                } else {
+                   s = true; 
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Los campos Saldo y Telefono han de ser numericos", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -425,7 +420,7 @@ public final class N_Socio extends javax.swing.JFrame {
                 T,
                 JOptionPane.YES_NO_OPTION);
         if (n == JOptionPane.YES_OPTION) {
-            M_Socio ventana = new M_Socio(conexion);
+            N_Socio ventana = new N_Socio(conexion);
             ventana.setVisible(true);
             this.setVisible(false);
             //Abrir nueva ventana para insertar Ticket en cupon

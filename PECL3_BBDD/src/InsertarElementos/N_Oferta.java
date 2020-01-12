@@ -340,9 +340,9 @@ public final class N_Oferta extends javax.swing.JFrame {
             //UPDATE cupon SET descuento = 20 WHERE  id_cupon = 1;
             s.executeUpdate("INSERT INTO public.oferta (id_oferta, descuento, fecha_inicio, fecha_fin) VALUES ('" + tf_ID.getText() + "', '" + tf_Descuento.getText()
                     + "', '" + FechaI + "', '" + FechaF + "');");
-            JOptionPane.showMessageDialog(null, "Se ha modificado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Se ha creado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
             //INCLUIR MODIFICAR LOS CUPONES ASOCIADOS AL SOCIO
-            confirmacion("¿Deseas modificar mas socios?", "Modificar Socio");
+            confirmacion("¿Deseas crear mas ofertas?", "Crear Oferta");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
@@ -383,7 +383,7 @@ public final class N_Oferta extends javax.swing.JFrame {
                 T,
                 JOptionPane.YES_NO_OPTION);
         if (n == JOptionPane.YES_OPTION) {
-            M_Socio ventana = new M_Socio(conexion);
+            N_Oferta ventana = new N_Oferta(conexion);
             ventana.setVisible(true);
             this.setVisible(false);
             //Abrir nueva ventana para insertar Ticket en cupon

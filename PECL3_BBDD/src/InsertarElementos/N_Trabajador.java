@@ -75,7 +75,7 @@ public final class N_Trabajador extends javax.swing.JFrame {
             }
         });
 
-        cb_NMedia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        cb_NMedia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una Nota Media...", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
         lbl_Fecha1.setText("Movil:");
 
@@ -300,7 +300,7 @@ public final class N_Trabajador extends javax.swing.JFrame {
             //JOptionPane.showOptionDialog(rootPane, s, turno, WIDTH, HEIGHT, null, null, NORMAL);
             JOptionPane.showMessageDialog(null, "Se ha modificado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
             //INCLUIR ES CAJERO O REPONEDOR confirmacion2
-            confirmacion("¿Deseas modificar mas socios?", "Modificar Producto");
+            confirmacion("¿Deseas crear mas trabajadores?", "Crear Trabajador");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
@@ -324,6 +324,7 @@ public final class N_Trabajador extends javax.swing.JFrame {
     /**
      * Rellena el CB_NTienda con los datos de las tiendas en la BD
      */
+    @SuppressWarnings("null")
     private void rellenarCBTienda() {
         cb_NTienda.removeAllItems();
         ResultSet rs = null;

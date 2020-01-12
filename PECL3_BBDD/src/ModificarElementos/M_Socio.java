@@ -319,7 +319,8 @@ public final class M_Socio extends javax.swing.JFrame {
 
     /**
      * Copia los parametros de un lado a otro
-     * @param evt 
+     *
+     * @param evt
      */
     private void btn_CopiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CopiarActionPerformed
         // TODO add your handling code here:
@@ -405,9 +406,9 @@ public final class M_Socio extends javax.swing.JFrame {
         } else {
             if (comprobarNumeroDouble(tf_SaldoAN.getText()) || comprobarNumero(tf_TelefonoN.getText(), 9)) {
                 if (tf_DNIN.getText().length() != 9) {
-                    s = true;
-                } else {
                     JOptionPane.showMessageDialog(null, "El campo DNI ha de tener 9 caracteres", "ERROR", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    s = true;
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Los campos Saldo y Telefono han de ser numericos", "ERROR", JOptionPane.ERROR_MESSAGE);
