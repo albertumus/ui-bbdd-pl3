@@ -124,7 +124,7 @@ public static Connection conexion;
      */
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
-                JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Esta Opcion esta en desarrollo aun", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
 //
 //        M_Productos_Comprados ventana = new M_Productos_Comprados(conexion);
 //        ventana.setVisible(true);
@@ -136,7 +136,7 @@ public static Connection conexion;
      */
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
-                JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Esta Opcion esta en desarrollo aun", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
 //
 //        E_Productos_Comprados ventana = new E_Productos_Comprados(conexion);
 //        ventana.setVisible(true);

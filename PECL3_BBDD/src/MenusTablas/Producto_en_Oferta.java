@@ -115,7 +115,7 @@ public static Connection conexion;
      */
     private void btn_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevoActionPerformed
         // TODO add your handling code here:
-                JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Esta Opcion esta en desarrollo aun", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
 
 //        N_Producto_en_Oferta ventana = new N_Producto_en_Oferta(conexion);
 //        ventana.setVisible(true);
@@ -127,7 +127,7 @@ public static Connection conexion;
      */
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Esta Opcion esta en desarrollo aun", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
 
 //        M_Producto_en_Oferta ventana = new M_Producto_en_Oferta(conexion);
 //        ventana.setVisible(true);
@@ -139,7 +139,7 @@ public static Connection conexion;
      */
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
-                JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Esta Opcion esta en desarrollo aun", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
 
 //        E_Producto_en_Oferta ventana = new E_Producto_en_Oferta(conexion);
 //        ventana.setVisible(true);

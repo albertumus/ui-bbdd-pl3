@@ -120,7 +120,7 @@ public class Trabajador_Puntua_Trabajador extends javax.swing.JFrame {
         // TODO add your handling code here:
 //        N_Trabajador_Puntua_Trabajador ventana = new N_Trabajador_Puntua_Trabajador(conexion);
 //        ventana.setVisible(true);
-        JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Esta Opcion esta en desarrollo aun", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_btn_NuevoActionPerformed
 
@@ -133,7 +133,7 @@ public class Trabajador_Puntua_Trabajador extends javax.swing.JFrame {
 //        // TODO add your handling code here:
 //        M_Trabajador_Puntua_Trabajador ventana = new M_Trabajador_Puntua_Trabajador(conexion);
 //        ventana.setVisible(true);
-        JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Esta Opcion esta en desarrollo aun", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
@@ -144,7 +144,7 @@ public class Trabajador_Puntua_Trabajador extends javax.swing.JFrame {
      */
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Esta Opcion esta en desarrollo aun", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
 
 //        E_Trabajador_Puntua_Trabajador ventana = new E_Trabajador_Puntua_Trabajador(conexion);
 //        ventana.setVisible(true);
