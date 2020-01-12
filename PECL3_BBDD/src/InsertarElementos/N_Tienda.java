@@ -151,7 +151,7 @@ public class N_Tienda extends javax.swing.JFrame {
                 s.executeUpdate("INSERT INTO tienda (nombre, ciudad, barrio) VALUES ('" + tf_Nombre.getText() + "', '" + tf_Ciudad.getText() + "', '" + tf_Barrio.getText() + "')");
                 JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
                 //INCLUIR MODIFICAR LOS CUPONES ASOCIADOS AL SOCIO
-                confirmacion("¿Deseas modificar mas socios?", "Modificar Producto");
+                confirmacion("¿Deseas añadir mas tiendas?", "Insertar Tienda");
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
             }
