@@ -201,8 +201,10 @@ public class N_Cajero extends javax.swing.JFrame {
             //Abrir nueva ventana para insertar Ticket en cupon
         } else {
             this.setVisible(false);
+            
         }
     }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Exit;
     private javax.swing.JButton btn_Insert;

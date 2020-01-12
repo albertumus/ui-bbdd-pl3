@@ -289,6 +289,7 @@ public final class N_Trabajador extends javax.swing.JFrame {
         Statement s = null;
         String turno = null;
         turno = TurnoNuevo();
+        Object [] botones = { "Cajero", "Reponedor"};
         try {
             s = conexion.createStatement();
         } catch (SQLException se) {
@@ -301,11 +302,13 @@ public final class N_Trabajador extends javax.swing.JFrame {
             //JOptionPane.showOptionDialog(rootPane, s, turno, WIDTH, HEIGHT, null, null, NORMAL);
             JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
             //INCLUIR ES CAJERO O REPONEDOR confirmacion2
-            confirmacion("¿Deseas crear mas trabajadores?", "Crear Trabajador");
+            confirmacion2("¿Cual es el puesto del trabajador","Seleccione su puesto",botones);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+        confirmacion("¿Deseas crear mas trabajadores?", "Crear Trabajador");
     }
+    
 
     /**
      * Comprueba el valor del CB para introducirlo en la BD
@@ -388,6 +391,31 @@ public final class N_Trabajador extends javax.swing.JFrame {
             //Abrir nueva ventana para insertar Ticket en cupon
         } else {
             this.setVisible(false);
+        }
+    }
+    
+    /**
+     * Crea un JOptionPane que te hace una pregunta segun P
+     *
+     * @param P Pregunta que aparece en el JOptionPane
+     * @param T Titulo del JOptionPane
+     */
+    private void confirmacion2(String P, String T, Object [] botones) {
+        int variable = JOptionPane.showOptionDialog (
+                null, 
+                P, 
+                T, 
+                JOptionPane.YES_NO_CANCEL_OPTION, 
+                JOptionPane.QUESTION_MESSAGE, null/*icono*/, botones, botones[0]);
+        if (variable == 0) {
+            N_Cajero ventana = new N_Cajero(conexion);
+            ventana.setVisible(true);
+            //Abrir nueva ventana para insertar Ticket en cupon
+        } else if(variable == 1){
+            N_Reponedor ventana = new N_Reponedor(conexion);
+            ventana.setVisible(true);
+        }else {
+            confirmacion("¿Deseas crear mas trabajadores?", "Crear Trabajador");
         }
     }
 
