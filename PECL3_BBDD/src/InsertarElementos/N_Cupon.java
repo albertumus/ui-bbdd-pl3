@@ -175,9 +175,9 @@ public class N_Cupon extends javax.swing.JFrame {
             System.out.println("probando conexion de consulta");
         }
         try {
-            rs = s.executeQuery("SELECT * FROM cupon");
+            rs = s.executeQuery("SELECT id_cupon FROM opinion order by  id_cupon desc LIMIT 1");
             while (rs.next()) {
-                id_opinion++;
+                id_opinion = Integer.parseInt(rs.getString(1))+1;
             }
             tf_ID.setText(Integer.toString(id_opinion));
         } catch (SQLException ex) {
