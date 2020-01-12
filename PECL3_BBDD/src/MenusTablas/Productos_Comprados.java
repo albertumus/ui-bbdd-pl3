@@ -12,6 +12,7 @@ import InsertarElementos.N_Productos_Comprados;
 import VisualizarTablas.Ver_Cupon;
 import VisualizarTablas.Ver_Productos_Comprados;
 import java.sql.Connection;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -123,8 +124,10 @@ public static Connection conexion;
      */
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
-        M_Productos_Comprados ventana = new M_Productos_Comprados(conexion);
-        ventana.setVisible(true);
+                JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+//
+//        M_Productos_Comprados ventana = new M_Productos_Comprados(conexion);
+//        ventana.setVisible(true);
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
     /**
@@ -133,8 +136,10 @@ public static Connection conexion;
      */
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
-        E_Productos_Comprados ventana = new E_Productos_Comprados(conexion);
-        ventana.setVisible(true);
+                JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+//
+//        E_Productos_Comprados ventana = new E_Productos_Comprados(conexion);
+//        ventana.setVisible(true);
     }//GEN-LAST:event_btn_EliminarActionPerformed
 
     /**

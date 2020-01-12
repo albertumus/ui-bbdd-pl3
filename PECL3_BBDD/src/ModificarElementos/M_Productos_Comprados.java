@@ -85,6 +85,12 @@ public class M_Productos_Comprados extends javax.swing.JFrame {
 
         lbl_Ticket.setText("Ticket:");
 
+        cb_Ticket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_TicketActionPerformed(evt);
+            }
+        });
+
         lbl_Ticket1.setText("Productos:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -176,7 +182,7 @@ public class M_Productos_Comprados extends javax.swing.JFrame {
                     try {
                         //if(tf_Nombre.equals(""))
                         s.executeUpdate("INSERT INTO public.productos_comprados (codigo_producto,id_ticket_ticket,cantidad) VALUES ('" + cb_Producto.getItemAt(cb_Producto.getSelectedIndex())
-                                + "','" + tf_Ticket.getText() + "','" + tf_Cantidad.getText() + "')");
+                                + "','" + cb_Ticket.getItemAt(cb_Ticket.getSelectedIndex()) + "','" + tf_Cantidad.getText() + "')");
                         JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
                         confirmacion("¿Deseas añadir mas productos?","Añadir Productos");
                     } catch (Exception se) {
@@ -190,6 +196,11 @@ public class M_Productos_Comprados extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btn_AnadirActionPerformed
+
+    private void cb_TicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_TicketActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cb_TicketActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,7 +267,7 @@ public class M_Productos_Comprados extends javax.swing.JFrame {
                 T,
                 JOptionPane.YES_NO_OPTION);
         if (n == JOptionPane.YES_OPTION) {
-            M_Productos_Comprados ventana = new M_Productos_Comprados(tf_Ticket.getText(), conexion);
+            M_Productos_Comprados ventana = new M_Productos_Comprados(conexion);
             ventana.setVisible(true);
             this.setVisible(false);
             //Abrir nueva ventana para insertar Ticket en cupon

@@ -13,13 +13,16 @@ import VisualizarTablas.Ver_Cupon;
 import VisualizarTablas.Ver_Productos_Comprados;
 import VisualizarTablas.Ver_Trabajador_Puntua_Trabajador;
 import java.sql.Connection;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author razvanvc
  */
 public class Trabajador_Puntua_Trabajador extends javax.swing.JFrame {
-public static Connection conexion;
+
+    public static Connection conexion;
+
     /**
      * Creates new form Tienda
      */
@@ -110,37 +113,47 @@ public static Connection conexion;
 
     /**
      * Crea una nueva ventana N_Cupon
-     * @param evt 
+     *
+     * @param evt
      */
     private void btn_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevoActionPerformed
         // TODO add your handling code here:
-        N_Trabajador_Puntua_Trabajador ventana = new N_Trabajador_Puntua_Trabajador(conexion);
-        ventana.setVisible(true);
+//        N_Trabajador_Puntua_Trabajador ventana = new N_Trabajador_Puntua_Trabajador(conexion);
+//        ventana.setVisible(true);
+        JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_btn_NuevoActionPerformed
 
     /**
      * Crea una nueva ventana M_Cupon
-     * @param evt 
+     *
+     * @param evt
      */
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
-        // TODO add your handling code here:
-        M_Trabajador_Puntua_Trabajador ventana = new M_Trabajador_Puntua_Trabajador(conexion);
-        ventana.setVisible(true);
+//        // TODO add your handling code here:
+//        M_Trabajador_Puntua_Trabajador ventana = new M_Trabajador_Puntua_Trabajador(conexion);
+//        ventana.setVisible(true);
+        JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
     /**
      * Crea una nueva ventana E_Cupon
-     * @param evt 
+     *
+     * @param evt
      */
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
-        E_Trabajador_Puntua_Trabajador ventana = new E_Trabajador_Puntua_Trabajador(conexion);
-        ventana.setVisible(true);
+        JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+
+//        E_Trabajador_Puntua_Trabajador ventana = new E_Trabajador_Puntua_Trabajador(conexion);
+//        ventana.setVisible(true);
     }//GEN-LAST:event_btn_EliminarActionPerformed
 
     /**
      * Crea una nueva ventana Ver_Cupon
-     * @param evt 
+     *
+     * @param evt
      */
     private void btn_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerActionPerformed
         // TODO add your handling code here:
@@ -167,15 +180,15 @@ public static Connection conexion;
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Trabajador_Puntua_Trabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
         //</editor-fold>
         //</editor-fold>
 

@@ -13,6 +13,7 @@ import VisualizarTablas.Ver_Cupon;
 import VisualizarTablas.Ver_Producto_Cupon;
 import VisualizarTablas.Ver_Productos_Comprados;
 import java.sql.Connection;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -114,8 +115,10 @@ public static Connection conexion;
      */
     private void btn_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevoActionPerformed
         // TODO add your handling code here:
-        N_Producto_Cupon ventana = new N_Producto_Cupon(conexion);
-        ventana.setVisible(true);
+                JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+
+//        N_Producto_Cupon ventana = new N_Producto_Cupon(conexion);
+//        ventana.setVisible(true);
     }//GEN-LAST:event_btn_NuevoActionPerformed
 
     /**
@@ -124,8 +127,10 @@ public static Connection conexion;
      */
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
-        M_Producto_Cupon ventana = new M_Producto_Cupon(conexion);
-        ventana.setVisible(true);
+                JOptionPane.showMessageDialog(null, "Esta Opcion esta en desarrollo aun", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+
+//        M_Producto_Cupon ventana = new M_Producto_Cupon(conexion);
+//        ventana.setVisible(true);
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
     /**
@@ -134,8 +139,10 @@ public static Connection conexion;
      */
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
-        E_Producto_Cupon ventana = new E_Producto_Cupon(conexion);
-        ventana.setVisible(true);
+                JOptionPane.showMessageDialog(null, "No hay ningun campo de Cajero que pueda ser modificado", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
+
+//        E_Producto_Cupon ventana = new E_Producto_Cupon(conexion);
+//        ventana.setVisible(true);
     }//GEN-LAST:event_btn_EliminarActionPerformed
 
     /**
