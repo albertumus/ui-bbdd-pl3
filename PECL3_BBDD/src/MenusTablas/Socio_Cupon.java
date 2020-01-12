@@ -11,6 +11,7 @@ import EliminarElementosTablas.E_Cupon;
 import InsertarElementos.N_Productos_Comprados;
 import VisualizarTablas.Ver_Cupon;
 import VisualizarTablas.Ver_Productos_Comprados;
+import VisualizarTablas.Ver_Socio_Cupon;
 import java.sql.Connection;
 
 /**
@@ -113,7 +114,7 @@ public static Connection conexion;
      */
     private void btn_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevoActionPerformed
         // TODO add your handling code here:
-        N_Productos_Comprados ventana = new N_Productos_Comprados(conexion);
+        N_Socio_Cupon ventana = new N_Socio_Cupon(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_NuevoActionPerformed
 
@@ -123,7 +124,7 @@ public static Connection conexion;
      */
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
-        M_Productos_Comprados ventana = new M_Productos_Comprados(conexion);
+        M_Socio_Cupon ventana = new M_Socio_Cupon(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
@@ -143,7 +144,7 @@ public static Connection conexion;
      */
     private void btn_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerActionPerformed
         // TODO add your handling code here:
-        Ver_Productos_Comprados ventana = new Ver_Productos_Comprados(conexion);
+        Ver_Socio_Cupon ventana = new Ver_Socio_Cupon(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_VerActionPerformed
 

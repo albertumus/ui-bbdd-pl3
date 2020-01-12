@@ -10,6 +10,7 @@ import ModificarElementos.M_Cupon;
 import EliminarElementosTablas.E_Cupon;
 import InsertarElementos.N_Productos_Comprados;
 import VisualizarTablas.Ver_Cupon;
+import VisualizarTablas.Ver_Producto_en_Oferta;
 import VisualizarTablas.Ver_Productos_Comprados;
 import java.sql.Connection;
 
@@ -113,7 +114,7 @@ public static Connection conexion;
      */
     private void btn_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevoActionPerformed
         // TODO add your handling code here:
-        N_Productos_Comprados ventana = new N_Productos_Comprados(conexion);
+        N_Producto_en_Oferta ventana = new N_Producto_en_Oferta(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_NuevoActionPerformed
 
@@ -123,7 +124,7 @@ public static Connection conexion;
      */
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
-        M_Productos_Comprados ventana = new M_Productos_Comprados(conexion);
+        M_Producto_en_Oferta ventana = new M_Producto_en_Oferta(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
@@ -133,7 +134,7 @@ public static Connection conexion;
      */
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
-        E_Productos_Comprados ventana = new E_Productos_Comprados(conexion);
+        E_Producto_en_Oferta ventana = new E_Producto_en_Oferta(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_EliminarActionPerformed
 
@@ -143,7 +144,7 @@ public static Connection conexion;
      */
     private void btn_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerActionPerformed
         // TODO add your handling code here:
-        Ver_Productos_Comprados ventana = new Ver_Productos_Comprados(conexion);
+        Ver_Producto_en_Oferta ventana = new Ver_Producto_en_Oferta(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_VerActionPerformed
 

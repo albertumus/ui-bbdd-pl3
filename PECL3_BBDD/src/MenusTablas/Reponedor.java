@@ -5,12 +5,8 @@
  */
 package MenusTablas;
 
-import InsertarElementos.N_Cupon;
-import ModificarElementos.M_Cupon;
-import EliminarElementosTablas.E_Cupon;
-import InsertarElementos.N_Productos_Comprados;
-import VisualizarTablas.Ver_Cupon;
-import VisualizarTablas.Ver_Productos_Comprados;
+import EliminarElementosTablas.E_Reponedor;
+import VisualizarTablas.Ver_Reponedor;
 import java.sql.Connection;
 
 /**
@@ -18,7 +14,9 @@ import java.sql.Connection;
  * @author razvanvc
  */
 public class Reponedor extends javax.swing.JFrame {
-public static Connection conexion;
+
+    public static Connection conexion;
+
     /**
      * Creates new form Tienda
      */
@@ -109,41 +107,45 @@ public static Connection conexion;
 
     /**
      * Crea una nueva ventana N_Cupon
-     * @param evt 
+     *
+     * @param evt
      */
     private void btn_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevoActionPerformed
         // TODO add your handling code here:
-        N_Productos_Comprados ventana = new N_Productos_Comprados(conexion);
+        N_Reponedor ventana = new N_Reponedor(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_NuevoActionPerformed
 
     /**
      * Crea una nueva ventana M_Cupon
-     * @param evt 
+     *
+     * @param evt
      */
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
-        M_Productos_Comprados ventana = new M_Productos_Comprados(conexion);
+        M_Reponedor ventana = new M_Reponedor(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
     /**
      * Crea una nueva ventana E_Cupon
-     * @param evt 
+     *
+     * @param evt
      */
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
-        E_Productos_Comprados ventana = new E_Productos_Comprados(conexion);
+        E_Reponedor ventana = new E_Reponedor(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_EliminarActionPerformed
 
     /**
      * Crea una nueva ventana Ver_Cupon
-     * @param evt 
+     *
+     * @param evt
      */
     private void btn_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerActionPerformed
         // TODO add your handling code here:
-        Ver_Productos_Comprados ventana = new Ver_Productos_Comprados(conexion);
+        Ver_Reponedor ventana = new Ver_Reponedor(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_VerActionPerformed
 
@@ -166,15 +168,15 @@ public static Connection conexion;
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Reponedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    //</editor-fold>
-    
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
         //</editor-fold>
         //</editor-fold>
 
