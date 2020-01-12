@@ -303,10 +303,11 @@ public final class N_Trabajador extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
             //INCLUIR ES CAJERO O REPONEDOR confirmacion2
             confirmacion2("¿Cual es el puesto del trabajador","Seleccione su puesto",botones);
+            confirmacion("¿Deseas crear mas trabajadores?", "Crear Trabajador");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        confirmacion("¿Deseas crear mas trabajadores?", "Crear Trabajador");
+        
     }
     
 
@@ -410,6 +411,7 @@ public final class N_Trabajador extends javax.swing.JFrame {
         if (variable == 0) {
             N_Cajero ventana = new N_Cajero(conexion);
             ventana.setVisible(true);
+            
             //Abrir nueva ventana para insertar Ticket en cupon
         } else if(variable == 1){
             N_Reponedor ventana = new N_Reponedor(conexion);
