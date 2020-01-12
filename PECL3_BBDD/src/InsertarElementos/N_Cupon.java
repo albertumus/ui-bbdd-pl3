@@ -141,7 +141,7 @@ public class N_Cupon extends javax.swing.JFrame {
                 s.executeUpdate("INSERT INTO public.cupon (id_cupon, descuento) VALUES ('" + tf_ID.getText() + "', '" + tf_Descuento.getText() + "')");
                 JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
                 //INCLUIR MODIFICAR LOS CUPONES ASOCIADOS AL SOCIO
-                confirmacion("¿Deseas insertar mas socios?", "Insertar Socio");
+                confirmacion("¿Deseas añadir mas cupones?", "Insertar Socio");
             } catch (SQLException se) {
                 JOptionPane.showMessageDialog(null, se.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
                 tf_Descuento.setText("");

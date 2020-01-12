@@ -57,7 +57,7 @@ public class Consultas extends javax.swing.JFrame {
         tbl_Resultado = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Ticket Nuevo");
+        setTitle("Consulta");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         ta_Info.setEditable(false);

@@ -39,6 +39,7 @@ public static Connection conexion;
         btn_Eliminar = new javax.swing.JButton();
         btn_Ver = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tienda");
 
         btn_Nuevo.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N

@@ -39,6 +39,9 @@ public static Connection conexion;
         btn_Eliminar = new javax.swing.JButton();
         btn_Ver = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Oferta");
+
         btn_Nuevo.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
         btn_Nuevo.setText("Nuevo");
         btn_Nuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +101,8 @@ public static Connection conexion;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(287, 452));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
