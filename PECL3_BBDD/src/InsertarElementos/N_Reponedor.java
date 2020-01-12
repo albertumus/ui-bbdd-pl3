@@ -51,7 +51,7 @@ public class N_Reponedor extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Nuevo Reponedor");
 
-        jLabel1.setText("Rellene los siguientes campos:");
+        jLabel1.setText("Modifique los campos:");
 
         cb_TS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -115,7 +115,7 @@ public class N_Reponedor extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(289, 152));
+        setSize(new java.awt.Dimension(238, 152));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
