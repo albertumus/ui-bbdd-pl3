@@ -5,6 +5,8 @@
  */
 package MenusTablas;
 
+import InsertarElementos.N_Cupon;
+import ModificarElementos.M_Cupon;
 import EliminarElementosTablas.E_Cupon;
 import VisualizarTablas.Ver_Cupon;
 import java.sql.Connection;

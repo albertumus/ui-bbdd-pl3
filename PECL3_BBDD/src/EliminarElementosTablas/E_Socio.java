@@ -6,7 +6,7 @@
 package EliminarElementosTablas;
 
 import static EliminarElementosTablas.E_Oferta.conexion;
-import MenusTablas.M_Tienda;
+import ModificarElementos.M_Tienda;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

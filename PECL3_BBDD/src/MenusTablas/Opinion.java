@@ -5,6 +5,8 @@
  */
 package MenusTablas;
 
+import InsertarElementos.N_Opinion;
+import ModificarElementos.M_Opinion;
 import EliminarElementosTablas.E_Opinion;
 import VisualizarTablas.Ver_Opinion;
 import java.sql.Connection;
@@ -99,24 +101,40 @@ public static Connection conexion;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Crea una ventana de N_Opinion
+     * @param evt 
+     */
     private void btn_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevoActionPerformed
         // TODO add your handling code here:
         N_Opinion ventana = new N_Opinion(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_NuevoActionPerformed
 
+    /**
+     * Crea una ventana de M_Opinion
+     * @param evt 
+     */
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
         M_Opinion ventana = new M_Opinion(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
+    /**
+     * Crea una ventana de E_Opinion
+     * @param evt 
+     */
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
         E_Opinion ventana = new E_Opinion(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_EliminarActionPerformed
 
+    /**
+     * Crea una ventana de Ver_Opinion
+     * @param evt 
+     */
     private void btn_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerActionPerformed
         // TODO add your handling code here:
         Ver_Opinion ventana = new Ver_Opinion(conexion);
@@ -139,20 +157,18 @@ public static Connection conexion;
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Opinion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Opinion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Opinion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Opinion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+    //</editor-fold>
+    //</editor-fold>
+    
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @SuppressWarnings("override")
             public void run() {
                 new Opinion(conexion).setVisible(true);
             }

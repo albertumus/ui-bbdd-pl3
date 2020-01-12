@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-46,0,0,1,-128"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="0"/>
+    <SyntheticProperty name="generateSize" type="boolean" value="true"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="lbl_Puntuacion1" pref="100" max="32767" attributes="0"/>
+                                  <Component id="lbl_Texto1" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="cb_Puntuacion" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="lbl_Info" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lbl_id" min="-2" pref="111" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="tf_ID" min="-2" pref="243" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="p_Hora1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="p_Hora" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="lbl_nSocio3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbl_nSocio2" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="cb_NSocio" min="-2" pref="244" max="-2" attributes="0"/>
+                                  <Component id="cb_NTienda" min="-2" pref="244" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="btn_Exit" min="-2" pref="117" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                      <Component id="btn_Insert" min="-2" pref="117" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <Component id="lbl_Info" min="-2" pref="16" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tf_ID" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="lbl_Texto1" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cb_Puntuacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_Puntuacion1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="p_Hora1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="p_Hora" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_nSocio2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cb_NSocio" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbl_nSocio3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cb_NTienda" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btn_Exit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_Insert" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lbl_Info">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Rellene los siguientes campos:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_id">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tf_ID">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_Insert">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Insertar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_InsertActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_Exit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cancelar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ExitActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cb_Puntuacion">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="12">
+            <StringItem index="0" value="Seleccione una puntuacion..."/>
+            <StringItem index="1" value="0"/>
+            <StringItem index="2" value="1"/>
+            <StringItem index="3" value="2"/>
+            <StringItem index="4" value="3"/>
+            <StringItem index="5" value="4"/>
+            <StringItem index="6" value="5"/>
+            <StringItem index="7" value="6"/>
+            <StringItem index="8" value="7"/>
+            <StringItem index="9" value="8"/>
+            <StringItem index="10" value="9"/>
+            <StringItem index="11" value="10"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_nSocio2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Numero Socio:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_nSocio3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nombre Tienda:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_Texto1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Texto:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_Puntuacion1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Puntuacion:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cb_NSocio">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cb_NTienda">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="ta_Texto">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="p_Hora1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="lbl_Hora4" min="-2" pref="100" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="lbl_Dia" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="tf_FechaD" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lbl_Mes" min="-2" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lbl_Anno" min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="tf_FechaM" min="-2" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="tf_FechaA1" min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lbl_Dia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Mes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Anno" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lbl_Hora4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_FechaD" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_FechaM" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_FechaA1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="tf_FechaD">
+        </Component>
+        <Component class="javax.swing.JTextField" name="tf_FechaM">
+        </Component>
+        <Component class="javax.swing.JTextField" name="tf_FechaA1">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_Dia">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dia:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_Mes">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mes:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_Anno">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="A&#xf1;o:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_Hora4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fecha:"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="p_Hora">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="lbl_Hora3" min="-2" pref="100" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="lbl_Hora2" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="tf_HoraH" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lbl_Minuto" min="-2" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lbl_Segundo" min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="tf_HoraM" min="-2" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="tf_HoraS" min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lbl_Hora2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Minuto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_Segundo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lbl_Hora3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_HoraH" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_HoraM" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_HoraS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="tf_HoraH">
+        </Component>
+        <Component class="javax.swing.JTextField" name="tf_HoraM">
+        </Component>
+        <Component class="javax.swing.JTextField" name="tf_HoraS">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_Hora2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Hora:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_Minuto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Minuto:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_Segundo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Segundo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_Hora3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Hora:"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

@@ -5,6 +5,7 @@
  */
 package MenusTablas;
 
+import ModificarElementos.M_Ticket;
 import InsertarElementos.N_Ticket;
 import EliminarElementosTablas.E_Ticket;
 import VisualizarTablas.Ver_Ticket;
@@ -100,24 +101,40 @@ public static Connection conexion;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Crea una ventana de N_Ticket
+     * @param evt 
+     */
     private void btn_NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NuevoActionPerformed
         // TODO add your handling code here:
         N_Ticket ventana = new N_Ticket(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_NuevoActionPerformed
 
+    /**
+     * Crea una ventana de M_Ticket
+     * @param evt 
+     */
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
         // TODO add your handling code here:
         M_Ticket ventana = new M_Ticket(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
+    /**
+     * Crea una ventana de E_Ticket
+     * @param evt 
+     */
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
         E_Ticket ventana = new E_Ticket(conexion);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_EliminarActionPerformed
 
+    /**
+     * Crea una ventana de Ver_Ticket
+     * @param evt 
+     */
     private void btn_VerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerActionPerformed
         // TODO add your handling code here:
         Ver_Ticket ventana = new Ver_Ticket(conexion);
@@ -140,20 +157,18 @@ public static Connection conexion;
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ticket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ticket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ticket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Ticket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+    //</editor-fold>
+    //</editor-fold>
+    
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @SuppressWarnings("override")
             public void run() {
                 new Ticket(conexion).setVisible(true);
             }
