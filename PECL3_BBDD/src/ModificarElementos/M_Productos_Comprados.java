@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package InsertarElementos;
+package ModificarElementos;
 
+import InsertarElementos.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +18,7 @@ import javax.swing.JOptionPane;
  *
  * @author razvanvc
  */
-public class N_Productos_Comprados extends javax.swing.JFrame {
+public class M_Productos_Comprados extends javax.swing.JFrame {
 
     public static String NTicket;
     public static Connection conexion;
@@ -27,17 +28,17 @@ public class N_Productos_Comprados extends javax.swing.JFrame {
      * @param NTicket Numero del Ticket
      * @param c Conexion con la BD
      */
-    public N_Productos_Comprados(String NTicket, Connection c) {
-        N_Productos_Comprados.NTicket = NTicket;
-        N_Productos_Comprados.conexion = c;
+    public M_Productos_Comprados(String NTicket, Connection c) {
+        M_Productos_Comprados.NTicket = NTicket;
+        M_Productos_Comprados.conexion = c;
         initComponents();
-        tf_Ticket.setText(NTicket);
+        cb_Ticket.addItem(NTicket);
+        cb_Ticket.setEditable(false);
         rellenarCBProducto();
     }
-    public N_Productos_Comprados(Connection c) {
-        N_Productos_Comprados.conexion = c;
+    public M_Productos_Comprados(Connection c) {
+        M_Productos_Comprados.conexion = c;
         initComponents();
-        tf_Ticket.setText(NTicket);
         rellenarCBProducto();
     }
 
@@ -51,19 +52,18 @@ public class N_Productos_Comprados extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        tf_Ticket = new javax.swing.JTextField();
         cb_Producto = new javax.swing.JComboBox<>();
         tf_Cantidad = new javax.swing.JTextField();
         btn_Anadir = new javax.swing.JButton();
         btn_Exit = new javax.swing.JButton();
         lbl_Cantidad = new javax.swing.JLabel();
         lbl_Ticket = new javax.swing.JLabel();
+        cb_Ticket = new javax.swing.JComboBox<>();
+        lbl_Ticket1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Seleccione un producto de la lista:");
-
-        tf_Ticket.setEditable(false);
 
         cb_Producto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un producto..." }));
 
@@ -85,6 +85,8 @@ public class N_Productos_Comprados extends javax.swing.JFrame {
 
         lbl_Ticket.setText("Ticket:");
 
+        lbl_Ticket1.setText("Productos:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,21 +94,26 @@ public class N_Productos_Comprados extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btn_Exit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_Anadir))
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(cb_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbl_Ticket, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_Ticket, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lbl_Ticket, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                            .addComponent(tf_Ticket))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_Cantidad, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                            .addComponent(lbl_Cantidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btn_Anadir))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cb_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbl_Ticket1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_Cantidad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_Cantidad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -114,24 +121,28 @@ public class N_Productos_Comprados extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Cantidad)
-                    .addComponent(lbl_Ticket))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(tf_Ticket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tf_Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(cb_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbl_Ticket)
+                            .addComponent(lbl_Ticket1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cb_Ticket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_Producto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lbl_Cantidad)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_Cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Anadir)
                     .addComponent(btn_Exit))
                 .addContainerGap())
         );
 
-        setSize(new java.awt.Dimension(385, 167));
+        setSize(new java.awt.Dimension(419, 167));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -197,8 +208,10 @@ public class N_Productos_Comprados extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(N_Productos_Comprados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(M_Productos_Comprados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         
@@ -208,7 +221,7 @@ public class N_Productos_Comprados extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @SuppressWarnings("override")
             public void run() {
-                new N_Productos_Comprados(NTicket, conexion).setVisible(true);
+                new M_Productos_Comprados(NTicket, conexion).setVisible(true);
             }
         });
     }
@@ -243,7 +256,7 @@ public class N_Productos_Comprados extends javax.swing.JFrame {
                 T,
                 JOptionPane.YES_NO_OPTION);
         if (n == JOptionPane.YES_OPTION) {
-            N_Productos_Comprados ventana = new N_Productos_Comprados(tf_Ticket.getText(), conexion);
+            M_Productos_Comprados ventana = new M_Productos_Comprados(tf_Ticket.getText(), conexion);
             ventana.setVisible(true);
             this.setVisible(false);
             //Abrir nueva ventana para insertar Ticket en cupon
@@ -282,10 +295,11 @@ public class N_Productos_Comprados extends javax.swing.JFrame {
     private javax.swing.JButton btn_Anadir;
     private javax.swing.JButton btn_Exit;
     private javax.swing.JComboBox<String> cb_Producto;
+    private javax.swing.JComboBox<String> cb_Ticket;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl_Cantidad;
     private javax.swing.JLabel lbl_Ticket;
+    private javax.swing.JLabel lbl_Ticket1;
     private javax.swing.JTextField tf_Cantidad;
-    private javax.swing.JTextField tf_Ticket;
     // End of variables declaration//GEN-END:variables
 }
