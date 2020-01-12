@@ -46,6 +46,7 @@ public class E_Trabajador extends javax.swing.JFrame {
         btn_Exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Eliminar Trabajador");
 
         lbl_Info.setText("Selecciona el trabajador que quieras eliminar");
 
@@ -134,7 +135,7 @@ public class E_Trabajador extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-        confirmacion("¿Desea eliminar mas ofertas?", "Eliminar Oferta");
+        confirmacion("¿Desea eliminar mas trabajadores?", "Eliminar Trabajadores");
     }//GEN-LAST:event_btn_DeleteActionPerformed
 
     /**

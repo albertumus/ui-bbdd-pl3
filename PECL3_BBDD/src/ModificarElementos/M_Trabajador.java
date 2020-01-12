@@ -70,6 +70,7 @@ public final class M_Trabajador extends javax.swing.JFrame {
         tf_MovilN = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Modificar Trabajador");
 
         cb_TS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -406,7 +407,7 @@ public final class M_Trabajador extends javax.swing.JFrame {
                     + "nota_media = '" + cb_NMediaN.getItemAt(cb_NMediaN.getSelectedIndex()) + "' WHERE dni = '" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "'");
             JOptionPane.showMessageDialog(null, "Se ha modificado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
             //INCLUIR MODIFICAR LOS CUPONES ASOCIADOS AL SOCIO
-            confirmacion("¿Deseas modificar mas socios?", "Modificar Producto");
+            confirmacion("¿Deseas modificar mas trabajadores?", "Modificar Trabajador");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }

@@ -56,6 +56,7 @@ public final class N_Trabajador extends javax.swing.JFrame {
         tf_Movil = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nuevo Trabajador");
 
         lbl_Info.setText("Rellene los siguientes campos:");
 
@@ -298,7 +299,7 @@ public final class N_Trabajador extends javax.swing.JFrame {
             s.executeUpdate("INSERT INTO public.trabajador (dni, nombre, telefono, movil, turno, nombre_tienda, nota_media) VALUES('" + tf_DNI.getText() + "', '" + tf_Nombre.getText() + "', '" + tf_Telefono.getText() + "', '"
                     + tf_Movil.getText() + "', '" + turno + "', '" + cb_NTienda.getItemAt(cb_NTienda.getSelectedIndex()) + "', " + cb_NMedia.getItemAt(cb_NMedia.getSelectedIndex()) + ")");
             //JOptionPane.showOptionDialog(rootPane, s, turno, WIDTH, HEIGHT, null, null, NORMAL);
-            JOptionPane.showMessageDialog(null, "Se ha modificado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
             //INCLUIR ES CAJERO O REPONEDOR confirmacion2
             confirmacion("¿Deseas crear mas trabajadores?", "Crear Trabajador");
         } catch (Exception ex) {
