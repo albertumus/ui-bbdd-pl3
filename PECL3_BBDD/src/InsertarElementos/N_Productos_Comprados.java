@@ -158,7 +158,7 @@ public class N_Productos_Comprados extends javax.swing.JFrame {
                     }
                     try {
                         //if(tf_Nombre.equals(""))
-                        s.executeUpdate("INSERT INTO public.producto_cupon (codigo_producto,id_ticket_ticket,cantidad) VALUES ('" + cb_Producto.getItemAt(cb_Producto.getSelectedIndex())
+                        s.executeUpdate("INSERT INTO public.productos_comprados (codigo_producto,id_ticket_ticket,cantidad) VALUES ('" + cb_Producto.getItemAt(cb_Producto.getSelectedIndex())
                                 + "','" + tf_Ticket.getText() + "','" + tf_Cantidad.getText() + "')");
                         JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
                         confirmacion("¿Deseas añadir mas productos?","Añadir Productos");

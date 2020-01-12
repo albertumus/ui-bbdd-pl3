@@ -67,6 +67,7 @@ public final class N_Ticket extends javax.swing.JFrame {
         lbl_Hora2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nuevo Ticket");
 
         lbl_Info.setText("Rellene los siguientes campos:");
 
