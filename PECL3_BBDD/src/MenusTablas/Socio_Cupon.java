@@ -141,7 +141,7 @@ public static Connection conexion;
         // TODO add your handling code here:
                 JOptionPane.showMessageDialog(null, "Esta Opcion esta en desarrollo aun", "No Disponible", JOptionPane.INFORMATION_MESSAGE);
 
-//        E_Productos_Comprados ventana = new E_Productos_Comprados(conexion);
+//        E_Socio_Cupon ventana = new E_Socio_Cupon(conexion);
 //        ventana.setVisible(true);
     }//GEN-LAST:event_btn_EliminarActionPerformed
 

@@ -215,7 +215,7 @@ public class E_Socio_Cupon extends javax.swing.JFrame {
     @SuppressWarnings({"null", "UseSpecificCatch"})
     private void rellenaCB2() {
         cb_TS.removeAllItems();
-        //ResultSet rs = null;
+        ResultSet rs = null;
         Statement s = null;
         //Creamos la query
         try {
