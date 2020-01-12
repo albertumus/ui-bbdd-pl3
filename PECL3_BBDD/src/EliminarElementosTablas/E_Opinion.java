@@ -43,6 +43,7 @@ public class E_Opinion extends javax.swing.JFrame {
         btn_Exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Eliminar Opinion");
 
         lbl_Info.setText("Selecciona la opinion que quieras eliminar");
 
@@ -208,7 +209,7 @@ public class E_Opinion extends javax.swing.JFrame {
                 T,
                 JOptionPane.YES_NO_OPTION);
         if (n == JOptionPane.YES_OPTION) {
-            E_Cupon ventana = new E_Cupon(conexion);
+            E_Opinion ventana = new E_Opinion(conexion);
             ventana.setVisible(true);
             this.setVisible(false);
             //Abrir nueva ventana para insertar Ticket en cupon
