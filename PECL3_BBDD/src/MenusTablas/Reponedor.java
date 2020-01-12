@@ -6,6 +6,8 @@
 package MenusTablas;
 
 import EliminarElementosTablas.E_Reponedor;
+import InsertarElementos.N_Reponedor;
+import ModificarElementos.M_Reponedor;
 import VisualizarTablas.Ver_Reponedor;
 import java.sql.Connection;
 
@@ -40,7 +42,7 @@ public class Reponedor extends javax.swing.JFrame {
         btn_Ver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cupon");
+        setTitle("Reponedor");
 
         btn_Nuevo.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
         btn_Nuevo.setText("Nuevo");

@@ -5,7 +5,6 @@
  */
 package InsertarElementos;
 
-
 import ModificarElementos.M_Tienda;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -19,15 +18,15 @@ import javax.swing.JOptionPane;
  *
  * @author razvanvc
  */
-public class N_Cajero extends javax.swing.JFrame {
+public class N_Reponedor extends javax.swing.JFrame {
 
-        public static Connection conexion;
+    public static Connection conexion;
 
     /**
      * Creates new form N_Cajero
      */
-    public N_Cajero(Connection c) {
-        N_Cajero.conexion = c;
+    public N_Reponedor(Connection c) {
+        N_Reponedor.conexion = c;
         initComponents();
         rellenaCB();
     }
@@ -45,11 +44,14 @@ public class N_Cajero extends javax.swing.JFrame {
         cb_TS = new javax.swing.JComboBox<>();
         btn_Insert = new javax.swing.JButton();
         btn_Exit = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        tf_Jornada = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Nuevo Cajero");
+        setTitle("Nuevo Reponedor");
 
-        jLabel1.setText("Seleccione un trabajador de la lista:");
+        jLabel1.setText("Rellene los siguientes campos:");
 
         cb_TS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -67,36 +69,53 @@ public class N_Cajero extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Jornada:");
+
+        jLabel3.setText("Trabajador:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cb_TS, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tf_Jornada)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_Exit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_Insert))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cb_TS, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addComponent(btn_Insert)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(cb_TS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cb_TS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_Jornada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Insert)
                     .addComponent(btn_Exit))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(263, 163));
+        setSize(new java.awt.Dimension(289, 152));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -108,20 +127,28 @@ public class N_Cajero extends javax.swing.JFrame {
     private void btn_InsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InsertActionPerformed
         // TODO add your handling code here:
         Statement s = null;
-            try {
-                s = conexion.createStatement();
-            } catch (SQLException se) {
-                System.out.println("probando conexion de consulta");
-            }
+        if (tf_Jornada.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No puede haber valores vacios", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (comprobarNumero(tf_Jornada.getText())) {
+                try {
+                    s = conexion.createStatement();
+                } catch (SQLException se) {
+                    System.out.println("probando conexion de consulta");
+                }
 
-            try {
-                s.executeUpdate("INSERT INTO cajero (dni_trabajador) VALUES ('"+cb_TS.getItemAt(cb_TS.getSelectedIndex())+"');");
-                JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
-                //INCLUIR MODIFICAR LOS CUPONES ASOCIADOS AL SOCIO
-                confirmacion("¿Deseas añadir mas cajeros?", "Insertar Cajero");
-            } catch (SQLException se) {
-                JOptionPane.showMessageDialog(null, se.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+                try {
+                    s.executeUpdate("INSERT INTO reponedor (jornada,dni_trabajador) VALUES ('" + tf_Jornada.getText() + "','" + cb_TS.getItemAt(cb_TS.getSelectedIndex()) + "')");
+                    JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+                    //INCLUIR MODIFICAR LOS CUPONES ASOCIADOS AL SOCIO
+                    confirmacion("¿Deseas añadir mas reponedores?", "Insertar Reponedor");
+                } catch (SQLException se) {
+                    JOptionPane.showMessageDialog(null, se.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "El campo jornada ha de ser un valor numerico entre 0 y 40", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
+        }
     }//GEN-LAST:event_btn_InsertActionPerformed
 
     /**
@@ -141,20 +168,21 @@ public class N_Cajero extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(N_Cajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(N_Reponedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(N_Cajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(N_Reponedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(N_Cajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(N_Reponedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(N_Cajero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(N_Reponedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new N_Cajero(conexion).setVisible(true);
+                new N_Reponedor(conexion).setVisible(true);
             }
         });
     }
@@ -182,6 +210,7 @@ public class N_Cajero extends javax.swing.JFrame {
         }
 
     }
+
     /**
      * Crea un JOptionPane que te hace una pregunta segun P
      *
@@ -195,7 +224,7 @@ public class N_Cajero extends javax.swing.JFrame {
                 T,
                 JOptionPane.YES_NO_OPTION);
         if (n == JOptionPane.YES_OPTION) {
-            N_Cajero ventana = new N_Cajero(conexion);
+            N_Reponedor ventana = new N_Reponedor(conexion);
             ventana.setVisible(true);
             this.setVisible(false);
             //Abrir nueva ventana para insertar Ticket en cupon
@@ -203,10 +232,34 @@ public class N_Cajero extends javax.swing.JFrame {
             this.setVisible(false);
         }
     }
+
+    /**
+     * Comprueba si un String es un numero y si es menor que una longitud
+     *
+     * @param num String que se desea comprobar si es un numero
+     * @return false si no lo es | true si lo es
+     */
+    @SuppressWarnings("UseSpecificCatch")
+    private boolean comprobarNumero(String num) {
+        boolean r = false;
+        try {
+            int Check = Integer.valueOf(num);
+            System.out.println(Check);
+            if (Check >= 0 && Check <= 40) {
+                r = true;
+            }
+        } catch (Exception e) {
+            r = false;
+        }
+        return r;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Exit;
     private javax.swing.JButton btn_Insert;
     private javax.swing.JComboBox<String> cb_TS;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField tf_Jornada;
     // End of variables declaration//GEN-END:variables
 }

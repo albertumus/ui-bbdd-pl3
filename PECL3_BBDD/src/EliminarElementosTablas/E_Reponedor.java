@@ -181,7 +181,7 @@ public class E_Reponedor extends javax.swing.JFrame {
         try {
             rs = s.executeQuery("SELECT * FROM reponedor");
             while (rs.next()) {
-                cb_TS.addItem(rs.getString(1));
+                cb_TS.addItem(rs.getString(2));
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
