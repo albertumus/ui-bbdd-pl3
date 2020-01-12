@@ -47,6 +47,7 @@ public class N_Cajero extends javax.swing.JFrame {
         btn_Exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Nuevo Cajero");
 
         jLabel1.setText("Seleccione un trabajador de la lista:");
 
@@ -95,7 +96,8 @@ public class N_Cajero extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(263, 163));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExitActionPerformed
@@ -116,7 +118,7 @@ public class N_Cajero extends javax.swing.JFrame {
                 s.executeUpdate("INSERT INTO cajero (dni_trabajador) VALUES ('"+cb_TS.getItemAt(cb_TS.getSelectedIndex())+"');");
                 JOptionPane.showMessageDialog(null, "Se ha insertado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
                 //INCLUIR MODIFICAR LOS CUPONES ASOCIADOS AL SOCIO
-                confirmacion("¿Deseas añadir mas cupones?", "Insertar Socio");
+                confirmacion("¿Deseas añadir mas cajeros?", "Insertar Cajero");
             } catch (SQLException se) {
                 JOptionPane.showMessageDialog(null, se.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
             }
