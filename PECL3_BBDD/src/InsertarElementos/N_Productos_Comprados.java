@@ -34,6 +34,13 @@ public class N_Productos_Comprados extends javax.swing.JFrame {
         tf_Ticket.setText(NTicket);
         rellenarCBProducto();
     }
+    public N_Productos_Comprados(Connection c) {
+        N_Productos_Comprados.NTicket = NTicket;
+        N_Productos_Comprados.conexion = c;
+        initComponents();
+        tf_Ticket.setText(NTicket);
+        rellenarCBProducto();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
