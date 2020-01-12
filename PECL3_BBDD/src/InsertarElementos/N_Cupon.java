@@ -49,7 +49,7 @@ public class N_Cupon extends javax.swing.JFrame {
         btn_Cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Nueva Tienda");
+        setTitle("Nueva Cupon");
 
         lbl_Nombre.setText("ID:");
 

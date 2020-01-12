@@ -52,6 +52,7 @@ public final class M_Cupon extends javax.swing.JFrame {
         btn_Exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Modificar Cupon");
 
         cb_TS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
