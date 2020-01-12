@@ -62,6 +62,7 @@ public final class N_Oferta extends javax.swing.JFrame {
         lbl_Hora3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nueva Oferta");
 
         lbl_Info.setText("Rellene los siguientes campos:");
 
@@ -360,9 +361,9 @@ public final class N_Oferta extends javax.swing.JFrame {
             System.out.println("probando conexion de consulta");
         }
         try {
-            rs = s.executeQuery("SELECT * FROM oferta");
+            rs = s.executeQuery("SELECT id_oferta FROM oferta order by  id_oferta desc LIMIT 1");
             while (rs.next()) {
-                id_opinion++;
+                id_opinion = Integer.parseInt(rs.getString(1))+1;
             }
             tf_ID.setText(Integer.toString(id_opinion));
         } catch (SQLException ex) {

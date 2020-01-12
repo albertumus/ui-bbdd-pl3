@@ -340,9 +340,9 @@ public final class N_Producto extends javax.swing.JFrame {
             System.out.println("probando conexion de consulta");
         }
         try {
-            rs = s.executeQuery("SELECT * FROM producto");
+            rs = s.executeQuery("SELECT codigo FROM producto order by  codigo desc LIMIT 1");
             while (rs.next()) {
-                id_opinion++;
+                id_opinion = Integer.parseInt(rs.getString(1))+1;
             }
             tf_Codigo.setText(Integer.toString(id_opinion));
         } catch (SQLException ex) {

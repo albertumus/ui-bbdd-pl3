@@ -442,9 +442,9 @@ public final class N_Ticket extends javax.swing.JFrame {
             System.out.println("probando conexion de consulta");
         }
         try {
-            rs = s.executeQuery("SELECT * FROM ticket");
+            rs = s.executeQuery("SELECT id_ticket FROM ticket order by  id_ticket desc LIMIT 1");
             while (rs.next()) {
-                id_opinion++;
+                id_opinion = Integer.parseInt(rs.getString(1))+1;
             }
             tf_ID.setText(Integer.toString(id_opinion));
         } catch (SQLException ex) {
